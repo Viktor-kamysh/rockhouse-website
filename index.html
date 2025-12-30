@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A Private Collection of 6 Exclusive Residential Units - Eco-Urban Living in Harmony with Nature">
+    <title>Privacy in Harmony with Nature | Boutique Residences</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Roboto+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --ivory: #F9F7F2;
+            --graphite: #2B2B2B;
+            --olive: #6B7F5E;
+            --white: #FFFFFF;
+            --light-gray: #E8E6E1;
+            --dark-overlay: rgba(0, 0, 0, 0.45);
+
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.3s ease;
+        }
+
+        /* ===== Navigation Header ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            transition: var(--transition-smooth);
+            background-color: transparent;
+        }
+
+        .header.scrolled {
+            background-color: rgba(249, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .header__container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: var(--transition-fast);
+        }
+
+        .header.scrolled .header__logo {
+            color: var(--graphite);
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .nav__list {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav__link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .header.scrolled .nav__link {
+            color: var(--graphite);
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--olive);
+            transition: width 0.3s ease;
+        }
+
+        .nav__link:hover::after {
+            width: 100%;
+        }
+
+        .header__actions {
+            display: none;
+            gap: 1rem;
+        }
+
+        .header__btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            border: 2px solid;
+        }
+
+        .header__btn--primary {
+            background-color: #E63946;
+            color: var(--white);
+            border-color: #E63946;
+        }
+
+        .header__btn--primary:hover {
+            background-color: #D62828;
+            border-color: #D62828;
+        }
+
+        .header__btn--secondary {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .header.scrolled .header__btn--secondary {
+            color: var(--graphite);
+            border-color: var(--graphite);
+        }
+
+        .header__btn--secondary:hover {
+            background-color: var(--olive);
+            color: var(--white);
+            border-color: var(--olive);
+        }
+
+        /* ===== Language Toggle ===== */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-toggle__btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: var(--transition-fast);
+            font-family: var(--font-body);
+            padding: 0.25rem 0.5rem;
+        }
+
+        .header.scrolled .lang-toggle__btn {
+            color: var(--graphite);
+        }
+
+        .lang-toggle__btn.active {
+            opacity: 1;
+            font-weight: 600;
+        }
+
+        .lang-toggle__btn:hover {
+            opacity: 1;
+        }
+
+        .lang-toggle__separator {
+            color: var(--white);
+            opacity: 0.4;
+            font-size: 0.875rem;
+        }
+
+        .header.scrolled .lang-toggle__separator {
+            color: var(--graphite);
+        }
+
+
+        /* ===== Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--graphite);
+            background-color: var(--ivory);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        /* ===== Typography ===== */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero__background video,
+        .hero__background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.5) 100%);
+            z-index: 2;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero__headline {
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero__subheadline {
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background-color: var(--olive);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 2px solid var(--olive);
+            transition: var(--transition-smooth);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== About Section ===== */
+        .about {
+            padding: 8rem 2rem;
+            background-color: var(--ivory);
+        }
+
+        .about__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about__text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+        }
+
+        .about__text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about__title {
+            margin-bottom: 2rem;
+            color: var(--graphite);
+        }
+
+        .about__description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--graphite);
+        }
+
+        .about__image {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+            transition-delay: 0.2s;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .about__image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .about__image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== Interiors Section ===== */
+        .interiors {
+            position: relative;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            background-color: var(--white);
+        }
+
+        .interiors__container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 700px;
+        }
+
+        .interiors__image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .interiors__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            will-change: transform;
+        }
+
+        .interiors__content {
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--ivory);
+        }
+
+        .interiors__title {
+            margin-bottom: 2rem;
+            color: var(--graphite);
+        }
+
+        .interiors__list {
+            list-style: none;
+        }
+
+        .interiors__list-item {
+            font-size: 1.125rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            transition: var(--transition-fast);
+        }
+
+        .interiors__list-item:hover {
+            padding-left: 1rem;
+            color: var(--olive);
+        }
+
+        .interiors__list-item::before {
+            content: "→";
+            margin-right: 1rem;
+            color: var(--olive);
+            font-weight: 600;
+        }
+
+        /* ===== Pricing Section ===== */
+        .pricing {
+            padding: 8rem 2rem;
+            background-color: var(--ivory);
+        }
+
+        .pricing__header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .pricing__title {
+            margin-bottom: 1rem;
+            color: var(--graphite);
+        }
+
+        .pricing__subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--graphite);
+            opacity: 0.7;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing__container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-table {
+            width: 100%;
+            background-color: var(--white);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .pricing-table__header {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr 1.3fr 0.7fr 0.8fr;
+            padding: 1.5rem 2rem;
+            border-bottom: 2px solid var(--graphite);
+            gap: 1rem;
+        }
+
+        .pricing-table__header-cell {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--graphite);
+            opacity: 0.7;
+        }
+
+        .pricing-table__row {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr 1.3fr 0.7fr 0.8fr;
+            padding: 2rem 2rem;
+            border-bottom: 1px solid var(--light-gray);
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .pricing-table__row:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .pricing-table__cell {
+            font-size: 0.95rem;
+            color: var(--graphite);
+            font-weight: 300;
+        }
+
+        .pricing-table__cell--unit {
+            font-weight: 500;
+            color: var(--graphite);
+        }
+
+        .pricing-table__cell--number {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .pricing-table__cell--price {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--graphite);
+        }
+
+        .pricing-table__cell--status {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--olive);
+            font-weight: 500;
+        }
+
+        .pricing-table__inquire {
+            font-size: 0.85rem;
+            color: var(--olive);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: var(--transition-fast);
+            border-bottom: 1px solid transparent;
+        }
+
+        .pricing-table__inquire:hover {
+            color: var(--graphite);
+            border-bottom-color: var(--graphite);
+        }
+
+        .pricing__footer {
+            margin-top: 2.5rem;
+            padding: 1.5rem 2rem;
+            background-color: rgba(107, 127, 94, 0.05);
+            text-align: center;
+        }
+
+        .pricing__footer-text {
+            font-size: 0.85rem;
+            font-family: 'Roboto Mono', monospace;
+            color: var(--graphite);
+            opacity: 0.8;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsive for pricing */
+        @media (max-width: 1024px) {
+
+            .pricing-table__header,
+            .pricing-table__row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .pricing-table__header {
+                display: none;
+            }
+
+            .pricing-table__row {
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pricing-table__cell::before {
+                content: attr(data-label);
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                opacity: 0.6;
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+
+            .pricing-table__cell {
+                width: 100%;
+                padding: 0.5rem 0;
+            }
+
+            .pricing-table__inquire {
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* ===== Availability Section ===== */
+        .availability {
+            padding: 8rem 2rem;
+            background-color: var(--ivory);
+        }
+
+        .availability__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .availability__title {
+            margin-bottom: 1rem;
+            color: var(--graphite);
+        }
+
+        .availability__subtitle {
+            font-size: 1.125rem;
+            font-weight: 300;
+            color: var(--graphite);
+            opacity: 0.8;
+        }
+
+        .availability__grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .residence-card {
+            background-color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .residence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--olive);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .residence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .residence-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .residence-card__number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--graphite);
+        }
+
+        .residence-card__status {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--olive);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .residence-card__status--available {
+            background-color: #28a745;
+        }
+
+        .residence-card__status--reserved {
+            background-color: #ffc107;
+            color: var(--graphite);
+        }
+
+        .residence-card__status--sold {
+            background-color: #dc3545;
+        }
+
+
+        .residence-card__button {
+            margin-top: 1.5rem;
+            padding: 0.75rem 2rem;
+            background-color: transparent;
+            border: 2px solid var(--graphite);
+            color: var(--graphite);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .residence-card__button:hover {
+            background-color: var(--graphite);
+            color: var(--white);
+        }
+
+        /* ===== PDF Modal ===== */
+        .pdf-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+        }
+
+        .pdf-modal__container {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            background-color: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .pdf-modal__close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--graphite);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-modal__close:hover {
+            background-color: var(--olive);
+            transform: rotate(90deg);
+        }
+
+        .pdf-modal__iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-modal__container {
+                width: 95%;
+                height: 90%;
+            }
+        }
+
+        /* ===== Footer Section ===== */
+        .footer {
+            padding: 6rem 2rem 3rem;
+            background-color: var(--graphite);
+            color: var(--white);
+        }
+
+        .footer__container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer__title {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer__subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form__group {
+            position: relative;
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 1.25rem 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: var(--transition-fast);
+        }
+
+        .form__input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form__input:focus {
+            outline: none;
+            border-color: var(--olive);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .form__submit {
+            padding: 1.25rem 3rem;
+            background-color: var(--olive);
+            color: var(--white);
+            border: 2px solid var(--olive);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .form__submit:hover {
+            background-color: transparent;
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .form__message {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form__message.visible {
+            opacity: 1;
+        }
+
+        .footer__copyright {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        /* ===== Location Section ===== */
+        .location {
+            padding: 8rem 2rem;
+            background-color: var(--ivory);
+        }
+
+        .location__container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location__content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+        }
+
+        .location__content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .location__title {
+            margin-bottom: 2rem;
+            color: var(--graphite);
+        }
+
+        .location__description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--graphite);
+        }
+
+        .location__distances {
+            list-style: none;
+        }
+
+        .location__distance-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .location__distance-item:hover {
+            padding-left: 1rem;
+            color: var(--olive);
+        }
+
+        .location__distance-label {
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .location__distance-value {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            color: var(--olive);
+        }
+
+        .location__map-wrapper {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+            transition-delay: 0.2s;
+        }
+
+        .location__map-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .location__map-link {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition-smooth);
+        }
+
+        .location__map-link:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .location__map-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(100%) contrast(90%);
+            transition: filter 0.5s ease;
+        }
+
+        .location__map-link:hover .location__map-image {
+            filter: grayscale(50%) contrast(95%);
+        }
+
+        .location__map-pin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            pointer-events: none;
+            z-index: 2;
+            animation: pinPulse 2s ease-in-out infinite;
+        }
+
+        .location__map-label {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2.5rem;
+            background-color: var(--olive);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .location__map-link:hover .location__map-label {
+            opacity: 1;
+        }
+
+        @keyframes pinPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 4.5rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            .nav {
+                display: block;
+            }
+
+            .header__actions {
+                display: flex;
+            }
+
+            .about__container {
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+
+            .interiors__container {
+                grid-template-columns: 1fr 1fr;
+                min-height: 700px;
+            }
+
+            .interiors__image-wrapper {
+                height: 100%;
+            }
+
+            .interiors__content {
+                padding: 4rem;
+            }
+
+            .availability__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 5.5rem;
+            }
+
+            .availability__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .location__container {
+                grid-template-columns: 1fr 1fr;
+                gap: 6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="header" id="main-header">
+        <div class="header__container">
+            <a href="#hero" class="header__logo">RockHouse</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#about" class="nav__link" data-i18n="nav_design">Design</a></li>
+                    <li><a href="#pricing" class="nav__link" data-i18n="nav_pricing">Pricing</a></li>
+                    <li><a href="#availability" class="nav__link" data-i18n="nav_collection">Collection</a></li>
+                    <li><a href="#location" class="nav__link" data-i18n="nav_location">Location</a></li>
+                </ul>
+            </nav>
+            <div class="lang-toggle">
+                <button class="lang-toggle__btn active" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <span class="lang-toggle__separator">|</span>
+                <button class="lang-toggle__btn" data-lang="cs" onclick="changeLanguage('cs')">CZ</button>
+            </div>
+            <div class="header__actions">
+                <a href="#availability" class="header__btn header__btn--primary"
+                    data-i18n="btn_available_units">Available Units</a>
+                <a href="#contact" class="header__btn header__btn--secondary" data-i18n="btn_get_in_touch">Get in
+                    Touch</a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero__background">
+            <video autoplay muted loop playsinline>
+                <source src="video/hero.mp4" type="video/mp4">
+                <img src="assets/images/exterior-hero.jpg" alt="Boutique Residence Exterior">
+            </video>
+        </div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <h1 class="hero__headline" data-i18n="hero_headline">Privacy in Harmony with Nature</h1>
+            <p class="hero__subheadline" data-i18n="hero_subheadline">A Private Collection of 6 Residences</p>
+            <a href="#availability" class="cta-button" id="cta-view-plans" data-i18n="hero_cta">View Floor Plans</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about__container">
+            <div class="about__text" data-animate>
+                <h2 class="about__title" data-i18n="about_title">Eco-Urban Living</h2>
+                <p class="about__description" data-i18n="about_description1">
+                    Nestled in perfect harmony between urban convenience and natural serenity,
+                    our boutique residence offers an unparalleled living experience. Each of the
+                    six exclusive units has been thoughtfully designed to embrace sustainability
+                    without compromising on luxury.
+                </p>
+                <p class="about__description" data-i18n="about_description2">
+                    The architecture celebrates the organic beauty of its surroundings, with
+                    verdant facades and expansive windows that blur the boundaries between
+                    interior and exterior spaces. This is where contemporary design meets
+                    environmental consciousness.
+                </p>
+            </div>
+            <div class="about__image" data-animate>
+                <img src="assets/images/aerial-context.JPG" alt="Aerial View of Residence Context">
+            </div>
+        </div>
+    </section>
+
+    <!-- Interiors Section -->
+    <section class="interiors" id="interiors">
+        <div class="interiors__container">
+            <div class="interiors__image-wrapper">
+                <img src="assets/images/interior-living.jpg" alt="Interior Living Space" class="interiors__image"
+                    id="parallax-image">
+            </div>
+            <div class="interiors__content">
+                <h2 class="interiors__title" data-i18n="interiors_title">Refined Living Spaces</h2>
+                <ul class="interiors__list">
+                    <li class="interiors__list-item" data-i18n="interiors_feature1">Panoramic Floor-to-Ceiling Windows
+                    </li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature4">Custom Built-In Wardrobes</li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature5">Smart Home Integration</li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature6">Private Outdoor Terraces</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability & Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing__header">
+            <h2 class="pricing__title" data-i18n="pricing_title">Availability & Pricing</h2>
+            <p class="pricing__subtitle" data-i18n="pricing_subtitle">Exclusive Collection of 6 Residential Units</p>
+        </div>
+
+        <div class="pricing__container">
+            <div class="pricing-table">
+                <!-- Table Header -->
+                <div class="pricing-table__header">
+                    <div class="pricing-table__header-cell" data-i18n="table_unit">Unit</div>
+                    <div class="pricing-table__header-cell" data-i18n="table_layout">Layout</div>
+                    <div class="pricing-table__header-cell" data-i18n="table_interior">Interior Area</div>
+                    <div class="pricing-table__header-cell" data-i18n="table_terrace">Terrace/Garden</div>
+                    <div class="pricing-table__header-cell" data-i18n="table_price">Price (excl. VAT)</div>
+                    <div class="pricing-table__header-cell" data-i18n="table_status">Status</div>
+                    <div class="pricing-table__header-cell"></div>
+                </div>
+
+                <!-- Unit 01 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 01 (S01)</div>
+                    <div class="pricing-table__cell" data-label="Layout">3+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">93.0 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">62.0 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">15,810,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+
+                <!-- Unit 02 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 02 (S01)</div>
+                    <div class="pricing-table__cell" data-label="Layout">3+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">119.2 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">11.0 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">22,648,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+
+                <!-- Unit 03 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 03 (S01)</div>
+                    <div class="pricing-table__cell" data-label="Layout">4+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">110.1 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">42.9 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">18,717,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+
+                <!-- Unit 04 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 04 (S02)</div>
+                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">72.2 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">51.1 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">13,718,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+
+                <!-- Unit 05 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 05 (S02)</div>
+                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">79.1 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">108.6 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">15,029,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+
+                <!-- Unit 06 -->
+                <div class="pricing-table__row">
+                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 06 (S02)</div>
+                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">81.3 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">49.3 m²
+                    </div>
+                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">13,821,000 CZK</div>
+                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
+                        data-i18n="status_available">Available</div>
+                    <div class="pricing-table__cell">
+                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Footer -->
+            <div class="pricing__footer">
+                <p class="pricing__footer-text" data-i18n="pricing_footer">Each apartment requires the purchase of a
+                    parking space and a storage
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability Section -->
+    <section class="availability" id="availability">
+        <div class="availability__header">
+            <h2 class="availability__title" data-i18n="availability_title">Exclusive Collection</h2>
+            <p class="availability__subtitle" data-i18n="availability_subtitle">Only 6 residences available</p>
+        </div>
+        <div class="availability__grid">
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_01">Residence 01</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="01" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_02">Residence 02</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="02" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_03">Residence 03</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="03" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_04">Residence 04</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="04" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_05">Residence 05</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="05" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+            <div class="residence-card">
+
+                <h3 class="residence-card__number" data-i18n="residence_06">Residence 06</h3>
+                <span class="residence-card__status" data-i18n="status_available">Available</span>
+                <button class="residence-card__button" data-residence="06" data-i18n="btn_view_plan">View Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="location__container">
+            <!-- Left Column: Content -->
+            <div class="location__content" data-animate>
+                <h2 class="location__title" data-i18n="location_title">Prime Location</h2>
+                <p class="location__description" data-i18n="location_description">
+                    Perfectly positioned in one of the city's most sought-after neighborhoods,
+                    this exclusive residence offers the ideal balance of urban convenience and
+                    natural tranquility. Surrounded by verdant parks, cultural landmarks, and
+                    premium amenities, every essential destination is within effortless reach.
+                </p>
+                <ul class="location__distances">
+                    <li class="location__distance-item">
+                        <span class="location__distance-label">City Center</span>
+                        <span class="location__distance-value">15 min drive</span>
+                    </li>
+                    <li class="location__distance-item">
+                        <span class="location__distance-label">Václav Havel Airport</span>
+                        <span class="location__distance-value">20 min drive</span>
+                    </li>
+                    <li class="location__distance-item">
+                        <span class="location__distance-label">International School of Prague</span>
+                        <span class="location__distance-value">12 min drive</span>
+                    </li>
+                    <li class="location__distance-item">
+                        <span class="location__distance-label">Prokopské údolí Park</span>
+                        <span class="location__distance-value">5 min walk</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Map -->
+            <div class="location__map-wrapper" data-animate>
+                <a href="https://maps.app.goo.gl/xyvx7HcxjB4KTYPJ8" target="_blank" rel="noopener noreferrer"
+                    class="location__map-link">
+                    <img src="assets/images/location-map.jpg" alt="Location Map" class="location__map-image">
+
+                    <!-- SVG Pin Overlay -->
+                    <svg class="location__map-pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
+                            fill="#6B7F5E" />
+                        <circle cx="12" cy="9" r="2" fill="#F9F7F2" />
+                    </svg>
+
+                    <!-- Hover Label -->
+                    <span class="location__map-label">Get Directions</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
+        <div class="footer__container">
+            <h2 class="footer__title" data-i18n="footer_title">Download Presentation & Pricing</h2>
+            <p class="footer__subtitle" data-i18n="footer_subtitle">Receive our exclusive brochure with detailed
+                information</p>
+
+            <form class="form" id="lead-form" name="contact" method="POST" data-netlify="true">
+                <div class="form__group">
+                    <input type="text" class="form__input" id="form-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form__group">
+                    <input type="tel" class="form__input" id="form-phone" name="phone" placeholder="Phone Number"
+                        required>
+                </div>
+                <button type="submit" class="form__submit" id="form-submit" data-i18n="btn_request_info">Request
+                    Information</button>
+                <p class="form__message" id="form-message"></p>
+            </form>
+
+            <p class="footer__copyright" data-i18n="footer_copyright">
+                © 2024 Boutique Residences. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Bilingual Translation System =====
+        const translations = {
+            en: {
+                // Navigation
+                nav_design: 'Design',
+                nav_pricing: 'Pricing',
+                nav_collection: 'Collection',
+                nav_location: 'Location',
+                btn_available_units: 'Available Units',
+                btn_get_in_touch: 'Get in Touch',
+
+                // Hero
+                hero_headline: 'Privacy in Harmony with Nature',
+                hero_subheadline: 'A Private Collection of 6 Residences',
+                hero_cta: 'View Floor Plans',
+
+                // About
+                about_title: 'Eco-Urban Living',
+                about_description1: 'Nestled in perfect harmony between urban convenience and natural serenity, our boutique residence offers an unparalleled living experience. Each of the six exclusive units has been thoughtfully designed to embrace sustainability without compromising on luxury.',
+                about_description2: 'The architecture celebrates the organic beauty of its surroundings, with verdant facades and expansive windows that blur the boundaries between interior and exterior spaces. This is where contemporary design meets environmental consciousness.',
+
+                // Interiors
+                interiors_title: 'Refined Living Spaces',
+                interiors_feature1: 'Panoramic Floor-to-Ceiling Windows',
+                interiors_feature4: 'Custom Built-In Wardrobes',
+                interiors_feature5: 'Smart Home Integration',
+                interiors_feature6: 'Private Outdoor Terraces',
+
+                // Pricing
+                pricing_title: 'Availability & Pricing',
+                pricing_subtitle: 'Exclusive Collection of 6 Residential Units',
+                table_unit: 'Unit',
+                table_layout: 'Layout',
+                table_interior: 'Interior Area',
+                table_terrace: 'Terrace/Garden',
+                table_price: 'Price (excl. VAT)',
+                table_status: 'Status',
+                status_available: 'Available',
+                status_reserved: 'Reserved',
+                status_sold: 'Sold',
+                btn_inquire: 'Inquire',
+                pricing_footer: 'Each apartment requires the purchase of a parking space and a storage',
+
+                // Availability
+                availability_title: 'Exclusive Collection',
+                availability_subtitle: 'Only 6 residences available',
+                residence_01: 'Residence 01',
+                residence_02: 'Residence 02',
+                residence_03: 'Residence 03',
+                residence_04: 'Residence 04',
+                residence_05: 'Residence 05',
+                residence_06: 'Residence 06',
+                btn_view_plan: 'View Plan',
+
+                // Location
+                location_title: 'Prime Location',
+                location_description: 'Perfectly positioned in one of the city\'s most sought-after neighborhoods, this exclusive residence offers the ideal balance of urban convenience and natural tranquility. Surrounded by verdant parks, cultural landmarks, and premium amenities, every essential destination is within effortless reach.',
+
+                // Footer
+                footer_title: 'Download Presentation & Pricing',
+                footer_subtitle: 'Receive our exclusive brochure with detailed information',
+                btn_request_info: 'Request Information',
+                footer_copyright: '© 2024 Boutique Residences. All Rights Reserved.',
+
+                // Form Placeholders
+                form_name_placeholder: 'Your Name',
+                form_phone_placeholder: 'Phone Number'
+            },
+            cs: {
+                // Navigation
+                nav_design: 'Design',
+                nav_pricing: 'Ceny',
+                nav_collection: 'Kolekce',
+                nav_location: 'Lokalita',
+                btn_available_units: 'Nabídka Jednotek',
+                btn_get_in_touch: 'Napište Nám',
+
+                // Hero
+                hero_headline: 'Soukromí v harmonii s přírodou',
+                hero_subheadline: 'Soukromá kolekce 6 rezidencí',
+                hero_cta: 'Zobrazit Půdorysy',
+
+                // About
+                about_title: 'Eko-městské bydlení',
+                about_description1: 'Naše butikové rezidence je zasazena v dokonalé harmonii mezi městským pohodlím a přírodním klidem a nabízí jedinečný zážitek z bydlení. Každá ze šesti exkluzivních jednotek byla pečlivě navržena tak, aby přijala udržitelnost bez kompromisů v oblasti luxusu.',
+                about_description2: 'Architektura oslavuje organickou krásu svého okolí se zelenými fasádami a expansivními okny, která rozmazávají hranice mezi vnitřními a vnějšími prostory. Toto je místo, kde se setkává současný design s ekologickým uvědoměním.',
+
+                // Interiors
+                interiors_title: 'Rafinované obytné prostory',
+                interiors_feature1: 'Panoramatická okna od podlahy ke stropu',
+                interiors_feature4: 'Vestavěné skříně na míru',
+                interiors_feature5: 'Integrace chytrého domova',
+                interiors_feature6: 'Soukromé venkovní terasy',
+
+                // Pricing
+                pricing_title: 'Dostupnost a ceny',
+                pricing_subtitle: 'Exkluzivní kolekce 6 rezidenčních jednotek',
+                table_unit: 'Jednotka',
+                table_layout: 'Dispozice',
+                table_interior: 'Podlahová Plocha',
+                table_terrace: 'Terasa/Zahrada',
+                table_price: 'Cena (bez DPH)',
+                table_status: 'Stav',
+                status_available: 'Volné',
+                status_reserved: 'Rezervováno',
+                status_sold: 'Prodáno',
+                btn_inquire: 'Informovat se',
+                pricing_footer: 'Každý byt vyžaduje nákup parkovacího místa a komory',
+
+                // Availability
+                availability_title: 'Exkluzivní kolekce',
+                availability_subtitle: 'Pouze 6 dostupných rezidencí',
+                residence_01: 'Rezidence 01',
+                residence_02: 'Rezidence 02',
+                residence_03: 'Rezidence 03',
+                residence_04: 'Rezidence 04',
+                residence_05: 'Rezidence 05',
+                residence_06: 'Rezidence 06',
+                btn_view_plan: 'Zobrazit Půdorys',
+
+                // Location
+                location_title: 'Vynikající lokalita',
+                location_description: 'Perfektně umístěná v jedné z nejvyhledávanějších čtvrtí města, tato exkluzivní rezidence nabízí ideální rovnováhu mezi městským pohodlím a přírodním klidem. Obklopená zelenými parky, kulturními památkami a prémiovými službami, každá důležitá destinace je na dosah ruky.',
+
+                // Footer
+                footer_title: 'Stáhnout prezentaci a ceny',
+                footer_subtitle: 'Získejte naši exkluzivní brožuru s podrobnými informacemi',
+                btn_request_info: 'Žádost o informace',
+                footer_copyright: '© 2024 Boutique Residences. Všechna práva vyhrazena.',
+
+                // Form Placeholders
+                form_name_placeholder: 'Vaše jméno',
+                form_phone_placeholder: 'Telefonní číslo'
+            }
+        };
+
+        // Change Language Function
+        function changeLanguage(lang) {
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update all elements with data-i18n attributes
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update form placeholders
+            const formName = document.getElementById('form-name');
+            const formPhone = document.getElementById('form-phone');
+            if (formName) formName.placeholder = translations[lang].form_name_placeholder;
+            if (formPhone) formPhone.placeholder = translations[lang].form_phone_placeholder;
+
+            // Update active language button
+            document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+        });
+
+        // ===== Intersection Observer for Fade-In Animations =====
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with data-animate attribute
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== Parallax Effect for Interior Image =====
+        const parallaxImage = document.getElementById('parallax-image');
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const interiorsSection = document.getElementById('interiors');
+
+            if (interiorsSection && parallaxImage) {
+                const sectionTop = interiorsSection.offsetTop;
+                const sectionHeight = interiorsSection.offsetHeight;
+
+                // Only apply parallax when section is in viewport
+                if (scrolled + window.innerHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+                    const offset = (scrolled - sectionTop) * 0.3;
+                    parallaxImage.style.transform = `translateY(${offset}px)`;
+                }
+            }
+        });
+
+        // ===== Load and Update Unit Statuses =====
+        async function loadUnitStatuses() {
+            try {
+                const response = await fetch('bookings.json');
+                const units = await response.json();
+
+                units.forEach(unit => {
+                    // Find the residence card for this unit
+                    const residenceCards = document.querySelectorAll('.residence-card');
+                    residenceCards.forEach((card, index) => {
+                        // Match by unit ID (index + 1 = unit number)
+                        if (unit.id === String(index + 1).padStart(2, '0')) {
+                            const statusElement = card.querySelector('.residence-card__status');
+                            if (statusElement) {
+                                // Update text content
+                                statusElement.textContent = unit.status;
+
+                                // Remove all status classes
+                                statusElement.classList.remove('residence-card__status--available');
+                                statusElement.classList.remove('residence-card__status--reserved');
+                                statusElement.classList.remove('residence-card__status--sold');
+
+                                // Add appropriate class based on status
+                                const statusClass = 'residence-card__status--' + unit.status.toLowerCase();
+                                statusElement.classList.add(statusClass);
+                            }
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error('Failed to load unit statuses:', error);
+                // Fail silently - page will show default "Available" status
+            }
+        }
+
+        // Load unit statuses on page load
+        document.addEventListener('DOMContentLoaded', loadUnitStatuses);
+
+        // ===== Smooth Scroll for CTA Button =====
+        document.getElementById('cta-view-plans').addEventListener('click', (e) => {
+
+            e.preventDefault();
+            const targetSection = document.querySelector(e.target.getAttribute('href'));
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+
+        // ===== Header Scroll Effect =====
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal__container">
+            <button class="pdf-modal__close" id="closeModal">×</button>
+            <iframe class="pdf-modal__iframe" id="pdfViewer" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        // PDF Modal Functionality
+        const pdfModal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const closeModal = document.getElementById('closeModal');
+        const viewPlanButtons = document.querySelectorAll('.residence-card__button');
+
+        // PDF file mapping
+        const pdfFiles = {
+            '01': 'assets/images/TOWNHOUSE-01.pdf',
+            '02': 'assets/images/TOWNHOUSE-02.pdf',
+            '03': 'assets/images/TOWNHOUSE-03.pdf',
+            '04': 'assets/images/TOWNHOUSE-04.pdf',
+            '05': 'assets/images/TOWNHOUSE-05.pdf',
+            '06': 'assets/images/TOWNHOUSE-06.pdf'
+        };
+
+        // Open modal and load PDF
+        viewPlanButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const residence = this.getAttribute('data-residence');
+                const pdfPath = pdfFiles[residence];
+
+                if (pdfPath) {
+                    pdfViewer.src = pdfPath;
+                    pdfModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent body scroll
+                }
+            });
+        });
+
+        // Close modal function
+        function closePDFModal() {
+            pdfModal.classList.remove('active');
+            pdfViewer.src = ''; // Clear PDF to stop loading
+            document.body.style.overflow = ''; // Restore body scroll
+        }
+
+        // Close button click
+        closeModal.addEventListener('click', closePDFModal);
+
+        // Click backdrop to close
+        pdfModal.addEventListener('click', function (e) {
+            if (e.target === pdfModal) {
+                closePDFModal();
+            }
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
+                closePDFModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
