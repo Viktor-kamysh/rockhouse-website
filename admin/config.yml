@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "apartments"
+    label: "Apartments"
+    files:
+      - name: "availability"
+        label: "Availability & Prices"
+        file: "bookings.json"
+        description: "Manage apartment list"
+        fields:
+          - name: "apartments"
+            label: "List of Units"
+            widget: "list"
+            fields:
+              - {label: "Unit Name", name: "unit", widget: "string"}
+              - {label: "Status", name: "status", widget: "select", options: ["Available", "Reserved", "Sold"]}
+              - {label: "Price", name: "price", widget: "string"}
