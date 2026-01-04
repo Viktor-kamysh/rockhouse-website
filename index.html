@@ -923,6 +923,195 @@
             opacity: 0.6;
         }
 
+        .footer__separator {
+            margin: 0 0.75rem;
+            opacity: 0.4;
+        }
+
+        .footer__privacy-link {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer__privacy-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* ===== Cookie Consent Banner ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cookie-banner.active {
+            transform: translateY(0);
+        }
+
+        .cookie-banner__text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .cookie-banner__button {
+            padding: 0.875rem 2.5rem;
+            background-color: var(--olive);
+            color: var(--white);
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cookie-banner__button:hover {
+            background-color: #7d936d;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .cookie-banner__button {
+                width: 100%;
+            }
+        }
+
+        /* ===== Construction Progress Section ===== */
+        .construction {
+            padding: 8rem 2rem;
+            background-color: #1a1a1a;
+            color: var(--white);
+        }
+
+        .construction__header {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .construction__title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .construction__subtitle {
+            font-size: 1.125rem;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        .construction-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .construction-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .construction-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .construction-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(107, 127, 94, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .construction-card__image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .construction-card:hover .construction-card__image {
+            transform: scale(1.05);
+        }
+
+        .construction-card__content {
+            padding: 2rem;
+        }
+
+        .construction-card__date {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--olive);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .construction-card__title {
+            font-size: 1.75rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .construction-card__description {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.8;
+            color: var(--white);
+        }
+
+        @media (min-width: 768px) {
+            .construction__title {
+                font-size: 3rem;
+            }
+
+            .construction-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .construction-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         /* ===== Location Section ===== */
         .location {
             padding: 8rem 2rem;
@@ -1460,6 +1649,17 @@
         </div>
     </section>
 
+    <!-- Construction Progress Section -->
+    <section class="construction" id="construction">
+        <div class="construction__header">
+            <h2 class="construction__title">Průběh stavby</h2>
+            <p class="construction__subtitle">Sledujte postup výstavby v reálném čase</p>
+        </div>
+        <div class="construction-grid" id="constructionGrid">
+            <!-- Construction updates will be dynamically loaded here -->
+        </div>
+    </section>
+
     <!-- Footer Section -->
     <footer class="footer" id="contact">
         <div class="footer__container">
@@ -1480,11 +1680,22 @@
                 <p class="form__message" id="form-message"></p>
             </form>
 
-            <p class="footer__copyright" data-i18n="footer_copyright">
-                © 2024 Boutique Residences. All Rights Reserved.
+            <p class="footer__copyright">
+                <span data-i18n="footer_copyright">© 2026 Trade Estate. Všechna práva vyhrazena.</span>
+                <span class="footer__separator">·</span>
+                <a href="#" class="footer__privacy-link">Ochrana osobních údajů</a>
             </p>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p class="cookie-banner__text">
+            Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie. Používáním tohoto webu s tím
+            souhlasíte.
+        </p>
+        <button class="cookie-banner__button" id="cookieAccept">Souhlasím</button>
+    </div>
 
     <script>
         // ===== Bilingual Translation System =====
@@ -1553,7 +1764,8 @@
 
                 // Form Placeholders
                 form_name_placeholder: 'Your Name',
-                form_phone_placeholder: 'Phone Number'
+                form_phone_placeholder: 'Phone Number',
+                footer_copyright: '© 2026 Trade Estate. All Rights Reserved.'
             },
             cs: {
                 // Navigation
@@ -1619,7 +1831,8 @@
 
                 // Form Placeholders
                 form_name_placeholder: 'Vaše jméno',
-                form_phone_placeholder: 'Telefonní číslo'
+                form_phone_placeholder: 'Telefonní číslo',
+                footer_copyright: '© 2026 Trade Estate. Všechna práva vyhrazena.'
             }
         };
 
@@ -1655,6 +1868,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             changeLanguage(savedLang);
+        });
+
+        // ===== Cookie Consent Banner =====
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieConsent = localStorage.getItem('cookieConsent');
+
+            // Show banner if consent not given
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('active');
+                }, 1000); // Show after 1 second delay
+            }
+
+            // Handle accept button
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieBanner.classList.remove('active');
+            });
         });
 
         // ===== Intersection Observer for Fade-In Animations =====
@@ -1731,6 +1964,68 @@
 
         // Load unit statuses on page load
         document.addEventListener('DOMContentLoaded', loadUnitStatuses);
+
+        // ===== Load Construction Updates =====
+        async function loadConstructionUpdates() {
+            try {
+                const response = await fetch('construction.json');
+                const data = await response.json();
+                const updates = data.updates || [];
+                const grid = document.getElementById('constructionGrid');
+
+                if (!grid) return;
+
+                // Clear existing content
+                grid.innerHTML = '';
+
+                // Sort updates by date (newest first)
+                updates.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                // Generate cards for each update
+                updates.forEach((update, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'construction-card';
+
+                    // Format date
+                    const date = new Date(update.date);
+                    const formattedDate = date.toLocaleDateString('cs-CZ', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    card.innerHTML = `
+                        <img src="${update.image}" alt="${update.title}" class="construction-card__image" onerror="this.style.display='none'">
+                        <div class="construction-card__content">
+                            <span class="construction-card__date">${formattedDate}</span>
+                            <h3 class="construction-card__title">${update.title}</h3>
+                            ${update.description ? `<p class="construction-card__description">${update.description}</p>` : ''}
+                        </div>
+                    `;
+
+                    grid.appendChild(card);
+
+                    // Trigger animation with stagger effect
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 150);
+                });
+
+                // If no updates, show a message
+                if (updates.length === 0) {
+                    grid.innerHTML = '<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">Zatím nejsou k dispozici žádné aktualizace.</p>';
+                }
+            } catch (error) {
+                console.error('Failed to load construction updates:', error);
+                const grid = document.getElementById('constructionGrid');
+                if (grid) {
+                    grid.innerHTML = '<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">Nepodařilo se načíst aktualizace stavby.</p>';
+                }
+            }
+        }
+
+        // Load construction updates on page load
+        document.addEventListener('DOMContentLoaded', loadConstructionUpdates);
 
         // ===== Smooth Scroll for CTA Button =====
         document.getElementById('cta-view-plans').addEventListener('click', (e) => {
