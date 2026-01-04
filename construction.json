@@ -1,10 +1,15 @@
 {
-    "updates": [
-        {
-            "date": "2026-01-04",
-            "title": "Zahájení stavby",
-            "image": "/assets/images/construction-1.jpg",
-            "description": "První výkopové práce."
-        }
-    ]
+  "updates": [
+    {
+      "date": "2026-01-04",
+      "title": "Zahájení stavby",
+      "image": "/assets/images/construction-1.jpg",
+      "description": "První výkopové práce."
+    },
+    {
+      "image": "/assets/images/20251219_113244.jpg",
+      "date": "2026-01-04",
+      "title": "01.01.2026"
+    }
+  ]
 }
