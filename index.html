@@ -1699,30 +1699,29 @@
         async function loadUnitStatuses() {
             try {
                 const response = await fetch('bookings.json');
-                const units = await response.json();
+                const data = await response.json();
+                const units = data.apartments || [];
 
-                units.forEach(unit => {
-                    // Find the residence card for this unit
+                units.forEach((unit, index) => {
+                    // Find the residence card for this unit (index matches array position)
                     const residenceCards = document.querySelectorAll('.residence-card');
-                    residenceCards.forEach((card, index) => {
-                        // Match by unit ID (index + 1 = unit number)
-                        if (unit.id === String(index + 1).padStart(2, '0')) {
-                            const statusElement = card.querySelector('.residence-card__status');
-                            if (statusElement) {
-                                // Update text content
-                                statusElement.textContent = unit.status;
+                    if (residenceCards[index]) {
+                        const card = residenceCards[index];
+                        const statusElement = card.querySelector('.residence-card__status');
+                        if (statusElement) {
+                            // Update text content
+                            statusElement.textContent = unit.status;
 
-                                // Remove all status classes
-                                statusElement.classList.remove('residence-card__status--available');
-                                statusElement.classList.remove('residence-card__status--reserved');
-                                statusElement.classList.remove('residence-card__status--sold');
+                            // Remove all status classes
+                            statusElement.classList.remove('residence-card__status--available');
+                            statusElement.classList.remove('residence-card__status--reserved');
+                            statusElement.classList.remove('residence-card__status--sold');
 
-                                // Add appropriate class based on status
-                                const statusClass = 'residence-card__status--' + unit.status.toLowerCase();
-                                statusElement.classList.add(statusClass);
-                            }
+                            // Add appropriate class based on status
+                            const statusClass = 'residence-card__status--' + unit.status.toLowerCase();
+                            statusElement.classList.add(statusClass);
                         }
-                    });
+                    }
                 });
             } catch (error) {
                 console.error('Failed to load unit statuses:', error);

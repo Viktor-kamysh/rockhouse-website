@@ -1,26 +1,34 @@
-[
-    {
-        "id": "01",
-        "status": "AVAILABLE"
-    },
-    {
-        "id": "02",
-        "status": "AVAILABLE"
-    },
-    {
-        "id": "03",
-        "status": "AVAILABLE"
-    },
-    {
-        "id": "04",
-        "status": "AVAILABLE"
-    },
-    {
-        "id": "05",
-        "status": "AVAILABLE"
-    },
-    {
-        "id": "06",
-        "status": "AVAILABLE"
-    }
-]
+{
+    "apartments": [
+        {
+            "unit": "Unit 01 (S01)",
+            "status": "Available",
+            "price": "15,810,000 CZK"
+        },
+        {
+            "unit": "Unit 02 (S01)",
+            "status": "Available",
+            "price": "22,648,000 CZK"
+        },
+        {
+            "unit": "Unit 03 (S01)",
+            "status": "Available",
+            "price": "18,717,000 CZK"
+        },
+        {
+            "unit": "Unit 04 (S02)",
+            "status": "Available",
+            "price": "13,718,000 CZK"
+        },
+        {
+            "unit": "Unit 05 (S02)",
+            "status": "Available",
+            "price": "15,029,000 CZK"
+        },
+        {
+            "unit": "Unit 06 (S02)",
+            "status": "Available",
+            "price": "13,821,000 CZK"
+        }
+    ]
+}
