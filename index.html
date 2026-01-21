@@ -1709,8 +1709,7 @@
             <p class="footer__subtitle" data-i18n="footer_subtitle">Receive our exclusive brochure with detailed
                 information</p>
 
-            <form class="form" id="lead-form" name="contact" method="POST" netlify>
-                <input type="hidden" name="form-name" value="contact" />
+            <form class="form" id="lead-form" method="POST">
                 <div class="form__group">
                     <input type="text" class="form__input" id="form-name" name="name" placeholder="Your Name" required>
                 </div>
@@ -1739,6 +1738,13 @@
         </p>
         <button class="cookie-banner__button" id="cookieAccept">Souhlasím</button>
     </div>
+
+    <!-- Hidden form for Netlify detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="tel" name="phone" />
+        <input type="hidden" name="form-name" value="contact" />
+    </form>
 
     <script>
         // ===== Bilingual Translation System =====
