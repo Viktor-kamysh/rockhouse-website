@@ -1807,7 +1807,11 @@
                 // Form Placeholders
                 form_name_placeholder: 'Your Name',
                 form_phone_placeholder: 'Phone Number',
-                footer_copyright: '© 2026 Trade Estate. All Rights Reserved.'
+                footer_copyright: '© 2026 Trade Estate. All Rights Reserved.',
+
+                // Form Messages
+                form_success: 'Thank you! We will contact you shortly.',
+                form_error: 'Error sending message. Please try again.'
             },
             cs: {
                 // Navigation
@@ -1874,7 +1878,11 @@
                 // Form Placeholders
                 form_name_placeholder: 'Vaše jméno',
                 form_phone_placeholder: 'Telefonní číslo',
-                footer_copyright: '© 2026 Trade Estate. Všechna práva vyhrazena.'
+                footer_copyright: '© 2026 Trade Estate. Všechna práva vyhrazena.',
+
+                // Form Messages
+                form_success: 'Děkujeme! Brzy se vám ozveme.',
+                form_error: 'Chyba při odesílání zprávy. Zkuste to prosím znovu.'
             }
         };
 
@@ -2096,6 +2104,50 @@
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== Form Submission Handler =====
+        document.getElementById('lead-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const messageEl = document.getElementById('form-message');
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
+            // Create FormData from form
+            const formData = new FormData(form);
+
+            try {
+                // Submit to Netlify with proper encoding
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    // Success - show success message
+                    messageEl.textContent = translations[currentLang].form_success;
+                    messageEl.classList.add('visible');
+                    form.reset();
+
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageEl.classList.remove('visible');
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+
+            } catch (error) {
+                console.error('Submission error', error);
+                messageEl.textContent = translations[currentLang].form_error;
+                messageEl.classList.add('visible');
+
+                // Hide error message after 5 seconds
+                setTimeout(() => {
+                    messageEl.classList.remove('visible');
+                }, 5000);
             }
         });
     </script>
