@@ -2116,6 +2116,7 @@
 
             // Create FormData from form
             const formData = new FormData(form);
+            formData.append("form-name", "contact");
 
             try {
                 // Submit to Netlify with proper encoding
