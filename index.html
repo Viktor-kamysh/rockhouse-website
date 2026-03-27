@@ -2006,15 +2006,28 @@
                 const data = await response.json();
                 const units = data.apartments || [];
 
+                const statusKeyMap = {
+                    'available': 'status_available',
+                    'reserved': 'status_reserved',
+                    'sold': 'status_sold'
+                };
+
+                const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
                 units.forEach((unit, index) => {
-                    // Find the residence card for this unit (index matches array position)
+                    const statusKey = statusKeyMap[unit.status.toLowerCase()] || 'status_available';
+                    const statusText = (translations[currentLang] && translations[currentLang][statusKey])
+                        ? translations[currentLang][statusKey]
+                        : unit.status;
+
+                    // Update residence card
                     const residenceCards = document.querySelectorAll('.residence-card');
                     if (residenceCards[index]) {
                         const card = residenceCards[index];
                         const statusElement = card.querySelector('.residence-card__status');
                         if (statusElement) {
-                            // Update text content
-                            statusElement.textContent = unit.status;
+                            statusElement.textContent = statusText;
+                            statusElement.setAttribute('data-i18n', statusKey);
 
                             // Remove all status classes
                             statusElement.classList.remove('residence-card__status--available');
@@ -2024,6 +2037,16 @@
                             // Add appropriate class based on status
                             const statusClass = 'residence-card__status--' + unit.status.toLowerCase();
                             statusElement.classList.add(statusClass);
+                        }
+                    }
+
+                    // Update pricing table row
+                    const tableRows = document.querySelectorAll('.pricing-table__row');
+                    if (tableRows[index]) {
+                        const tableStatusCell = tableRows[index].querySelector('.pricing-table__cell--status');
+                        if (tableStatusCell) {
+                            tableStatusCell.textContent = statusText;
+                            tableStatusCell.setAttribute('data-i18n', statusKey);
                         }
                     }
                 });
