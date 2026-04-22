@@ -3,32 +3,32 @@
     {
       "unit": "Unit 01 (S01)",
       "status": "Available",
-      "price": "15,810,000 CZK"
+      "price": "Price on request"
     },
     {
       "unit": "Unit 02 (S01)",
       "status": "Reserved",
-      "price": "22,648,000 CZK"
+      "price": "Price on request"
     },
     {
       "unit": "Unit 03 (S01)",
       "status": "Available",
-      "price": "18,717,000 CZK"
+      "price": "Price on request"
     },
     {
       "unit": "Unit 04 (S02)",
       "status": "Available",
-      "price": "13,718,000 CZK"
+      "price": "Price on request"
     },
     {
       "unit": "Unit 05 (S02)",
       "status": "Available",
-      "price": "15,029,000 CZK"
+      "price": "Price on request"
     },
     {
       "unit": "Unit 06 (S02)",
       "status": "Available",
-      "price": "13,821,000 CZK"
+      "price": "Price on request"
     }
   ]
 }
