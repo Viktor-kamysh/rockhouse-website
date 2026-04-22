@@ -2048,6 +2048,12 @@
                             tableStatusCell.textContent = statusText;
                             tableStatusCell.setAttribute('data-i18n', statusKey);
                         }
+
+                        // Update price cell from bookings.json
+                        const tablePriceCell = tableRows[index].querySelector('.pricing-table__cell--price');
+                        if (tablePriceCell && unit.price !== undefined) {
+                            tablePriceCell.textContent = unit.price;
+                        }
                     }
                 });
             } catch (error) {
