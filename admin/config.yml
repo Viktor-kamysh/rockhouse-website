@@ -9,18 +9,50 @@ collections:
   - name: "apartments"
     label: "Apartments"
     files:
-      - name: "availability"
-        label: "Availability & Prices"
+      - name: "townhouse_data"
+        label: "Verified Townhouse Data"
         file: "bookings.json"
-        description: "Manage apartment list"
+        description: "Manage verified townhouse areas, plans and room tables"
         fields:
           - name: "apartments"
             label: "List of Units"
             widget: "list"
             fields:
               - {label: "Unit Name", name: "unit", widget: "string"}
-              - {label: "Status", name: "status", widget: "select", options: ["Available", "Reserved", "Sold"]}
-              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Residence ID", name: "id", widget: "string"}
+              - {label: "Residence Name", name: "residence", widget: "string"}
+              - {label: "Official Unit", name: "officialUnit", widget: "string", required: false}
+              - {label: "Building", name: "building", widget: "string", required: false}
+              - {label: "Layout", name: "layout", widget: "string"}
+              - {label: "Levels", name: "levels", widget: "string"}
+              - {label: "Plocha dle NV 366/2013 / Area according to NV 366/2013", name: "nvArea", widget: "string"}
+              - {label: "Součet místností / Room table total", name: "roomTableTotal", widget: "string"}
+              - {label: "Outdoor Area", name: "outdoorArea", widget: "string"}
+              - {label: "Outdoor Type", name: "outdoorType", widget: "string", required: false}
+              - {label: "Total Area", name: "totalArea", widget: "string", required: false}
+              - {label: "Price", name: "price", widget: "string", required: false, hint: "Leave empty to show Price on request / Cena na vyžádání"}
+              - label: "Sales Status"
+                name: "status"
+                widget: "select"
+                default: "info"
+                options:
+                  - {label: "With sales team / U prodejce", value: "info"}
+                  - {label: "Available / Volné", value: "available"}
+                  - {label: "Reserved / Rezervováno", value: "reserved"}
+                  - {label: "Sold / Prodáno", value: "sold"}
+              - {label: "Project PDF", name: "pdf", widget: "file", required: false}
+              - {label: "Plan Preview Image", name: "planPreview", widget: "image", required: false}
+              - {label: "Official Site Plan Extract", name: "sitePlan", widget: "image", required: false}
+              - {label: "Apartment Video Path or URL", name: "video", widget: "string", required: false}
+              - {label: "Source Document", name: "source", widget: "string", required: false}
+              - label: "Rooms"
+                name: "rooms"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Code", name: "code", widget: "string"}
+                  - {label: "Room name", name: "name", widget: "string"}
+                  - {label: "Area", name: "area", widget: "string"}
   - name: "construction"
     label: "Construction Progress"
     files:
@@ -33,6 +65,17 @@ collections:
             widget: "list"
             fields:
               - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
-              - {label: "Title", name: "title", widget: "string"}
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Czech", name: "cs", widget: "string"}
               - {label: "Photo", name: "image", widget: "image"}
-              - {label: "Description", name: "description", widget: "text", required: false}
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "English", name: "en", widget: "text", required: false}
+                  - {label: "Czech", name: "cs", widget: "text", required: false}

@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="A Private Collection of 6 Exclusive Residential Units - Eco-Urban Living in Harmony with Nature">
-    <title>Privacy in Harmony with Nature | Boutique Residences</title>
+        content="Rock House Prague by Trade Estate - 6 boutique south-facing townhouses in Prokop Valley with verified project floor plans.">
+    <title>Rock House Prague | Boutique Townhouses by Trade Estate</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <style>
         /* ===== CSS Variables ===== */
         :root {
-            --ivory: #F9F7F2;
-            --graphite: #333333;
-            --olive: #6B7F5E;
+            --ivory: #F7F4EC;
+            --graphite: #252421;
+            --olive: #66765A;
+            --bronze: #B08A5A;
+            --charcoal: #171716;
             --white: #FFFFFF;
-            --light-gray: #E8E6E1;
+            --light-gray: #DED8CC;
             --dark-overlay: rgba(0, 0, 0, 0.45);
 
-            --font-heading: 'Roboto', sans-serif;
-            --font-body: 'Roboto', sans-serif;
+            --font-heading: 'Manrope', sans-serif;
+            --font-body: 'Manrope', sans-serif;
 
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-fast: all 0.3s ease;
@@ -39,35 +41,59 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 2rem 2rem;
+            padding: 1.05rem 2.25rem;
             transition: var(--transition-smooth);
             background-color: transparent;
         }
 
         .header.scrolled {
-            background-color: rgba(249, 247, 242, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            padding: 1.25rem 2rem;
+            background-color: rgba(247, 244, 236, 0.94);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+            padding: 0.72rem 2.25rem;
         }
 
         .header__container {
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
-            justify-content: space-between;
+            gap: 1.5rem;
         }
 
         .header__logo {
             display: inline-flex;
             align-items: center;
+            justify-self: start;
             text-decoration: none;
             transition: var(--transition-fast);
+            position: relative;
+            min-width: 70px;
+        }
+
+        .header__logo::after {
+            background: var(--bronze);
+            bottom: -0.45rem;
+            content: '';
+            height: 1px;
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            transform: translateX(-50%);
+            transition: opacity 260ms ease, width 260ms ease;
+            width: 0;
+        }
+
+        .header__logo:hover::after,
+        .header__logo:focus-visible::after {
+            opacity: 1;
+            width: 100%;
         }
 
         .nav-logo {
-            max-height: 90px;
+            height: 54px;
+            max-height: 54px;
             width: auto;
             display: block;
             transition: filter 0.3s ease;
@@ -84,19 +110,20 @@
         .nav__list {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: clamp(1rem, 2vw, 2.1rem);
             align-items: center;
         }
 
         .nav__link {
             color: var(--white);
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
             text-transform: uppercase;
             transition: var(--transition-fast);
             position: relative;
+            white-space: nowrap;
         }
 
         .header.scrolled .nav__link {
@@ -120,29 +147,37 @@
 
         .header__actions {
             display: none;
-            gap: 1rem;
+            gap: 0.75rem;
+            justify-self: end;
         }
 
         .header__btn {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            min-height: 2.75rem;
+            padding: 0.66rem 0.95rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.11em;
+            line-height: 1.15;
+            text-align: center;
             text-transform: uppercase;
             text-decoration: none;
             transition: var(--transition-fast);
-            border: 2px solid;
+            border: 1px solid;
+            white-space: normal;
         }
 
         .header__btn--primary {
-            background-color: #E63946;
+            background-color: var(--charcoal);
             color: var(--white);
-            border-color: #E63946;
+            border-color: var(--charcoal);
         }
 
         .header__btn--primary:hover {
-            background-color: #D62828;
-            border-color: #D62828;
+            background-color: var(--bronze);
+            border-color: var(--bronze);
         }
 
         .header__btn--secondary {
@@ -167,14 +202,15 @@
             display: flex;
             gap: 0.5rem;
             align-items: center;
+            justify-self: end;
         }
 
         .lang-toggle__btn {
             background: none;
             border: none;
             color: var(--white);
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.7rem;
+            font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             cursor: pointer;
@@ -245,17 +281,16 @@
         h3 {
             font-family: var(--font-heading);
             font-weight: 700;
-            line-height: 1.2;
+            letter-spacing: 0;
+            line-height: 1.08;
         }
 
         h1 {
-            font-size: 3rem;
-            letter-spacing: -0.02em;
+            font-size: clamp(2.65rem, 6vw, 5.1rem);
         }
 
         h2 {
-            font-size: 2.5rem;
-            letter-spacing: -0.01em;
+            font-size: clamp(2rem, 4.2vw, 3.7rem);
         }
 
         h3 {
@@ -266,7 +301,7 @@
             font-family: var(--font-body);
             font-weight: 400;
             line-height: 1.6;
-            letter-spacing: 0.01em;
+            letter-spacing: 0;
         }
 
         a {
@@ -278,11 +313,11 @@
         /* ===== Hero Section ===== */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 88svh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: flex-start;
+            text-align: left;
             color: var(--white);
             overflow: hidden;
         }
@@ -302,6 +337,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            filter: brightness(1.18) saturate(1.05);
         }
 
         .hero__overlay {
@@ -310,55 +346,137 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom,
-                    rgba(0, 0, 0, 0.3) 0%,
-                    rgba(0, 0, 0, 0.5) 100%);
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.18) 52%, rgba(0, 0, 0, 0.38) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.46) 100%);
             z-index: 2;
         }
 
         .hero__content {
             position: relative;
             z-index: 3;
-            max-width: 800px;
-            padding: 0 2rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 7.25rem 2.5rem 2.25rem;
             animation: fadeInUp 1.2s ease-out;
         }
 
+        .hero__eyebrow {
+            color: var(--bronze);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            margin-bottom: 0.9rem;
+            text-transform: uppercase;
+        }
+
         .hero__headline {
-            font-size: 2.5rem;
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.12rem;
+            line-height: 1;
+            margin-bottom: 1.15rem;
+            max-width: 650px;
+            text-shadow: none;
+        }
+
+        .hero__brand-main {
+            color: var(--white);
+            display: block;
+            font-size: clamp(2.9rem, 5vw, 4.65rem);
+            font-weight: 700;
+            letter-spacing: -0.045em;
+            line-height: 1.02;
+            text-transform: none;
+        }
+
+        .hero__brand-place {
+            align-items: center;
+            color: rgba(255, 255, 255, 0.82);
+            display: flex;
+            font-size: clamp(0.78rem, 1vw, 0.96rem);
+            font-weight: 700;
+            gap: 0.85rem;
+            letter-spacing: 0.32em;
+            line-height: 1;
+            margin-top: 0.35rem;
+            text-transform: uppercase;
+        }
+
+        .hero__brand-place::before {
+            background: var(--bronze);
+            content: '';
+            display: block;
+            height: 1px;
+            width: clamp(2.5rem, 5vw, 4.6rem);
         }
 
         .hero__subheadline {
-            font-size: 1.1rem;
-            font-weight: 400;
-            line-height: 1.6;
+            font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0;
+            margin-bottom: 1.65rem;
+            max-width: 560px;
+            opacity: 0.86;
+        }
+
+        .hero__proof {
+            border-top: 1px solid rgba(255, 255, 255, 0.32);
+            display: grid;
+            gap: 0.85rem;
+            grid-template-columns: 1fr;
+            margin: 1.65rem 0 0;
+            max-width: 720px;
+            padding-top: 0.85rem;
+            text-align: left;
+        }
+
+        .hero__proof-item {
+            color: var(--white);
+        }
+
+        .hero__proof-value {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero__proof-label {
+            color: rgba(255, 255, 255, 0.78);
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 3rem;
-            opacity: 0.95;
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background-color: var(--olive);
-            color: var(--white);
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            padding: 0.78rem 1.28rem;
+            background-color: var(--white);
+            color: var(--charcoal);
             text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            line-height: 1.2;
+            max-width: 100%;
+            text-align: center;
             text-transform: uppercase;
-            border: 2px solid var(--olive);
+            border: 1px solid var(--white);
             transition: var(--transition-smooth);
         }
 
         .cta-button:hover {
             background-color: transparent;
             border-color: var(--white);
+            color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
@@ -366,7 +484,7 @@
         /* Mobile responsive for hero section */
         @media (max-width: 768px) {
             .nav-logo {
-                max-height: 60px;
+                max-height: 36px;
             }
 
             .hero__headline {
@@ -382,22 +500,34 @@
 
             .hero__content {
                 max-width: 100%;
-                padding: 0 1.5rem;
+                padding: 7rem 1.5rem 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero__proof {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .hero__proof {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
         /* ===== About Section ===== */
         .about {
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
             background-color: var(--ivory);
         }
 
         .about__container {
-            max-width: 1200px;
+            max-width: 1320px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 4rem;
+            gap: 3.5rem;
             align-items: center;
         }
 
@@ -418,8 +548,8 @@
         }
 
         .about__description {
-            font-size: 1.125rem;
-            line-height: 1.8;
+            font-size: 1.03rem;
+            line-height: 1.75;
             margin-bottom: 1.5rem;
             color: var(--graphite);
         }
@@ -430,7 +560,7 @@
             transition: var(--transition-smooth);
             transition-delay: 0.2s;
             overflow: hidden;
-            height: 500px;
+            height: 460px;
         }
 
         .about__image.visible {
@@ -450,10 +580,74 @@
             transform: scale(1.05);
         }
 
+        /* ===== Developer Trust Section ===== */
+        .developer-proof {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 2.5rem 2rem;
+        }
+
+        .developer-proof__container {
+            align-items: center;
+            display: grid;
+            gap: 1.8rem;
+            grid-template-columns: 1fr;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .developer-proof__eyebrow {
+            color: var(--bronze);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .developer-proof__text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.96rem;
+            max-width: 620px;
+        }
+
+        .developer-proof__stats {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .developer-proof__stat {
+            border-left: 1px solid rgba(255, 255, 255, 0.22);
+            padding-left: 1.25rem;
+        }
+
+        .developer-proof__value {
+            display: block;
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .developer-proof__label {
+            color: rgba(255, 255, 255, 0.62);
+            display: block;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            margin-top: 0.35rem;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 900px) {
+            .developer-proof__container {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
         /* ===== Interiors Section ===== */
         .interiors {
             position: relative;
-            min-height: 700px;
+            min-height: 620px;
             display: flex;
             align-items: center;
             background-color: var(--white);
@@ -463,13 +657,13 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr;
-            min-height: 700px;
+            min-height: 620px;
         }
 
         .interiors__image-wrapper {
             position: relative;
             overflow: hidden;
-            height: 500px;
+            height: 440px;
         }
 
         .interiors__image {
@@ -481,7 +675,7 @@
         }
 
         .interiors__content {
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -498,8 +692,8 @@
         }
 
         .interiors__list-item {
-            font-size: 1.125rem;
-            padding: 1rem 0;
+            font-size: 1rem;
+            padding: 0.85rem 0;
             border-bottom: 1px solid var(--light-gray);
             display: flex;
             align-items: center;
@@ -520,13 +714,19 @@
 
         /* ===== Pricing Section ===== */
         .pricing {
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
             background-color: var(--ivory);
         }
 
         .pricing__header {
-            text-align: center;
-            margin-bottom: 5rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+            margin-bottom: 3.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1400px;
+            text-align: left;
         }
 
         .pricing__title {
@@ -535,11 +735,12 @@
         }
 
         .pricing__subtitle {
-            font-size: 1rem;
-            font-weight: 300;
+            font-size: 0.95rem;
+            font-weight: 500;
             color: var(--graphite);
             opacity: 0.7;
-            letter-spacing: 0.05em;
+            letter-spacing: 0;
+            max-width: 520px;
         }
 
         .pricing__container {
@@ -550,20 +751,20 @@
         .pricing-table {
             width: 100%;
             background-color: var(--white);
-            border-top: 1px solid var(--light-gray);
+            border: 1px solid rgba(37, 36, 33, 0.12);
         }
 
         .pricing-table__header {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr 1fr 1.3fr 0.7fr 0.8fr;
-            padding: 1.5rem 2rem;
-            border-bottom: 2px solid var(--graphite);
+            grid-template-columns: 1.05fr 0.6fr 1fr 1.35fr 1.05fr 0.95fr 0.95fr 0.75fr;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--graphite);
             gap: 1rem;
         }
 
         .pricing-table__header-cell {
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 800;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--graphite);
@@ -572,8 +773,8 @@
 
         .pricing-table__row {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr 1fr 1.3fr 0.7fr 0.8fr;
-            padding: 2rem 2rem;
+            grid-template-columns: 1.05fr 0.6fr 1fr 1.35fr 1.05fr 0.95fr 0.95fr 0.75fr;
+            padding: 1.4rem 1.5rem;
             border-bottom: 1px solid var(--light-gray);
             align-items: center;
             gap: 1rem;
@@ -587,7 +788,7 @@
         .pricing-table__cell {
             font-size: 0.95rem;
             color: var(--graphite);
-            font-weight: 300;
+            font-weight: 500;
         }
 
         .pricing-table__cell--unit {
@@ -596,26 +797,43 @@
         }
 
         .pricing-table__cell--number {
-            font-family: 'Roboto', sans-serif !important;
+            font-family: var(--font-body);
             font-size: 0.9rem;
             font-weight: 400;
             letter-spacing: normal;
         }
 
         .pricing-table__cell--price {
-            font-family: 'Roboto', sans-serif !important;
+            font-family: var(--font-body);
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 700;
             color: var(--graphite);
             letter-spacing: normal;
         }
 
         .pricing-table__cell--status {
-            font-size: 0.8rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.09em;
+            color: var(--graphite);
+            font-weight: 800;
+        }
+
+        .status-badge {
+            background: rgba(102, 118, 90, 0.14);
             color: var(--olive);
-            font-weight: 500;
+            display: inline-flex;
+            padding: 0.36rem 0.68rem;
+        }
+
+        .status-badge--reserved {
+            background: rgba(176, 138, 90, 0.16);
+            color: #8a663b;
+        }
+
+        .status-badge--sold {
+            background: rgba(37, 36, 33, 0.12);
+            color: var(--graphite);
         }
 
         .pricing-table__inquire {
@@ -633,16 +851,42 @@
             border-bottom-color: var(--graphite);
         }
 
+        .pricing-table__actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .pricing-table__action {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid transparent;
+            color: var(--olive);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0;
+            transition: var(--transition-fast);
+        }
+
+        .pricing-table__action:hover {
+            border-bottom-color: var(--graphite);
+            color: var(--graphite);
+        }
+
         .pricing__footer {
-            margin-top: 2.5rem;
-            padding: 1.5rem 2rem;
-            background-color: rgba(107, 127, 94, 0.05);
-            text-align: center;
+            margin-top: 1.25rem;
+            padding: 1rem 1.25rem;
+            background-color: rgba(176, 138, 90, 0.08);
+            border: 1px solid rgba(176, 138, 90, 0.18);
+            text-align: left;
         }
 
         .pricing__footer-text {
             font-size: 0.85rem;
-            font-family: 'Roboto', sans-serif !important;
+            font-family: var(--font-body);
             color: var(--graphite);
             opacity: 0.8;
             letter-spacing: normal;
@@ -691,13 +935,16 @@
 
         /* ===== Availability Section ===== */
         .availability {
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
             background-color: var(--ivory);
         }
 
         .availability__header {
-            text-align: center;
-            margin-bottom: 4rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+            max-width: 1320px;
+            text-align: left;
         }
 
         .availability__title {
@@ -706,28 +953,200 @@
         }
 
         .availability__subtitle {
-            font-size: 1.125rem;
-            font-weight: 300;
+            font-size: 1rem;
+            font-weight: 500;
             color: var(--graphite);
             opacity: 0.8;
         }
 
         .availability__grid {
-            max-width: 1200px;
+            max-width: 1320px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.4rem;
+        }
+
+        .apartment-explorer {
+            background: var(--white);
+            border: 1px solid rgba(37, 36, 33, 0.12);
+            display: grid;
+            grid-template-columns: 1fr;
+            margin: 0 auto 2.5rem;
+            max-width: 1320px;
+            min-height: 560px;
+        }
+
+        .apartment-explorer__media {
+            background: #f4f1e8;
+            min-height: 360px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .apartment-explorer__media video,
+        .apartment-explorer__media img {
+            height: 100%;
+            inset: 0;
+            object-fit: contain;
+            padding: clamp(1rem, 3vw, 2rem);
+            position: absolute;
+            width: 100%;
+        }
+
+        .apartment-explorer__media::after {
+            content: none;
+        }
+
+        .apartment-explorer__badge {
+            background: rgba(255, 255, 255, 0.9);
+            bottom: 1.4rem;
+            color: var(--charcoal);
+            font-size: 0.68rem;
+            font-weight: 800;
+            left: 1.4rem;
+            letter-spacing: 0.12em;
+            padding: 0.7rem 0.8rem;
+            position: absolute;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .apartment-explorer__panel {
+            display: flex;
+            flex-direction: column;
+            padding: 1.6rem;
+        }
+
+        .apartment-explorer__tabs {
+            display: grid;
+            gap: 0.45rem;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            margin-bottom: 1.5rem;
+        }
+
+        .apartment-explorer__tab {
+            background: transparent;
+            border: 1px solid var(--light-gray);
+            color: var(--graphite);
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            min-height: 2.35rem;
+            text-transform: uppercase;
+            transition: var(--transition-fast);
+        }
+
+        .apartment-explorer__tab.active,
+        .apartment-explorer__tab:hover {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .apartment-explorer__eyebrow {
+            color: rgba(37, 36, 33, 0.58);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .apartment-explorer__title {
+            color: var(--graphite);
+            font-size: clamp(1.9rem, 3.4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.08;
+            margin-bottom: 0.9rem;
+        }
+
+        .apartment-explorer__status {
+            align-self: flex-start;
+            margin-bottom: 1.25rem;
+        }
+
+        .apartment-explorer__metrics {
+            border-top: 1px solid var(--light-gray);
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-bottom: 1.3rem;
+        }
+
+        .apartment-explorer__metric {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 0.95rem 0.8rem 0.95rem 0;
+        }
+
+        .apartment-explorer__metric span {
+            color: rgba(37, 36, 33, 0.56);
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+        }
+
+        .apartment-explorer__metric strong {
+            color: var(--graphite);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .apartment-explorer__source {
+            color: rgba(37, 36, 33, 0.68);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: auto 0 1.2rem;
+        }
+
+        .apartment-explorer__actions {
+            display: grid;
+            gap: 0.7rem;
+            grid-template-columns: 1fr;
+        }
+
+        .apartment-explorer__button {
+            align-items: center;
+            border: 1px solid var(--graphite);
+            color: var(--graphite);
+            display: inline-flex;
+            font-size: 0.72rem;
+            font-weight: 800;
+            justify-content: center;
+            letter-spacing: 0.07em;
+            line-height: 1.2;
+            min-height: 2.85rem;
+            padding: 0.55rem 0.7rem;
+            text-align: center;
+            text-transform: uppercase;
+            transition: var(--transition-fast);
+            white-space: normal;
+        }
+
+        .apartment-explorer__button--primary {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .apartment-explorer__button:hover {
+            background: var(--bronze);
+            border-color: var(--bronze);
+            color: var(--white);
         }
 
         .residence-card {
             background-color: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-            border: 1px solid var(--light-gray);
+            padding: 0;
+            border: 1px solid rgba(37, 36, 33, 0.12);
             transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .residence-card::before {
@@ -736,15 +1155,15 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background-color: var(--olive);
+            height: 2px;
+            background-color: var(--bronze);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
 
         .residence-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 18px 54px rgba(23, 23, 22, 0.12);
         }
 
         .residence-card:hover::before {
@@ -752,54 +1171,305 @@
         }
 
         .residence-card__number {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
             color: var(--graphite);
+        }
+
+        .residence-card__media {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            background: #f4f1e8;
+            border: 0;
+            cursor: pointer;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+        }
+
+        .residence-card__media video,
+        .residence-card__media img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .residence-card__media::after {
+            content: none;
+        }
+
+        .residence-card__play {
+            display: none;
+        }
+
+        .residence-card__body {
+            padding: 1.5rem;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .residence-card__topline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .residence-card__unit {
+            color: var(--graphite);
+            font-size: 0.78rem;
+            opacity: 0.65;
         }
 
         .residence-card__status {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background-color: var(--olive);
-            color: var(--white);
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            display: inline-flex;
+            padding: 0.42rem 0.78rem;
+            background-color: rgba(102, 118, 90, 0.12);
+            color: var(--olive);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            line-height: 1;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .residence-card__status--available {
-            background-color: #28a745;
+            background-color: rgba(102, 118, 90, 0.14);
+            color: var(--olive);
         }
 
         .residence-card__status--reserved {
-            background-color: #ffc107;
-            color: var(--graphite);
+            background-color: rgba(176, 138, 90, 0.16);
+            color: #8a663b;
         }
 
         .residence-card__status--sold {
-            background-color: #dc3545;
+            background-color: rgba(37, 36, 33, 0.12);
+            color: var(--graphite);
         }
 
+        .residence-card__status--info {
+            background-color: rgba(176, 138, 90, 0.14);
+            color: #8a663b;
+        }
+
+        .residence-card__facts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            text-align: left;
+        }
+
+        .residence-card__rooms {
+            border-top: 1px solid rgba(37, 36, 33, 0.12);
+            display: grid;
+            gap: 0.45rem;
+            padding-top: 0.95rem;
+        }
+
+        .residence-card__room {
+            align-items: baseline;
+            color: rgba(37, 36, 33, 0.68);
+            display: flex;
+            font-size: 0.76rem;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .residence-card__room strong {
+            color: var(--graphite);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .apartment-concepts {
+            margin: 3rem auto 0;
+            max-width: 1400px;
+        }
+
+        .apartment-concepts__header {
+            align-items: end;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .apartment-concepts__title {
+            color: var(--graphite);
+            font-size: clamp(1.6rem, 2.7vw, 2.5rem);
+        }
+
+        .apartment-concepts__note {
+            color: rgba(37, 36, 33, 0.62);
+            font-size: 0.88rem;
+            max-width: 430px;
+        }
+
+        .concept-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(37, 36, 33, 0.12);
+            color: var(--graphite);
+            display: grid;
+            gap: 1rem;
+            padding: clamp(1rem, 2vw, 1.45rem);
+        }
+
+        .concept-card--wide {
+            grid-column: 1 / -1;
+        }
+
+        .concept-card__label {
+            color: var(--olive);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .concept-card__title {
+            font-size: clamp(1.5rem, 2.8vw, 2.55rem);
+            line-height: 1;
+        }
+
+        .concept-card__visual {
+            background: #f7f4ec;
+            border: 1px solid rgba(37, 36, 33, 0.08);
+            min-height: 220px;
+            padding: 1rem;
+        }
+
+        .concept-card__visual img {
+            display: block;
+            height: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .concept-card__facts {
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .concept-card__fact {
+            border-top: 1px solid rgba(37, 36, 33, 0.1);
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            padding-top: 0.65rem;
+        }
+
+        .concept-card__fact span {
+            color: rgba(37, 36, 33, 0.58);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .concept-card__fact strong {
+            font-size: 0.95rem;
+            text-align: right;
+        }
+
+        .concept-card__rooms {
+            display: grid;
+            gap: 0.4rem;
+            max-height: 260px;
+            overflow: auto;
+        }
+
+        @media (min-width: 900px) {
+            .concept-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .concept-card--detail,
+            .concept-card--pdf {
+                grid-template-columns: 0.85fr 1fr;
+            }
+
+            .concept-card--mobile {
+                max-width: 430px;
+            }
+        }
+
+        .residence-card__fact-label {
+            color: var(--graphite);
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+            opacity: 0.55;
+            text-transform: uppercase;
+        }
+
+        .residence-card__fact-value {
+            color: var(--graphite);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .residence-card__source {
+            color: var(--graphite);
+            font-size: 0.8rem;
+            opacity: 0.65;
+        }
+
+        .residence-card__actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
 
         .residence-card__button {
-            margin-top: 1.5rem;
-            padding: 0.75rem 2rem;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            min-height: 2.8rem;
+            padding: 0.72rem 1rem;
             background-color: transparent;
-            border: 2px solid var(--graphite);
+            border: 1px solid var(--graphite);
             color: var(--graphite);
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            line-height: 1.2;
+            text-align: center;
             text-transform: uppercase;
             transition: var(--transition-smooth);
             cursor: pointer;
+            width: 100%;
         }
 
         .residence-card__button:hover {
             background-color: var(--graphite);
             color: var(--white);
+        }
+
+        .residence-card__button--primary {
+            background-color: var(--graphite);
+            color: var(--white);
+        }
+
+        .residence-card__button--primary:hover {
+            background-color: var(--olive);
+            border-color: var(--olive);
         }
 
         /* ===== PDF Modal ===== */
@@ -829,6 +1499,53 @@
             border-radius: 4px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .pdf-modal__header {
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            padding: 1.25rem 4.5rem 1.25rem 1.5rem;
+        }
+
+        .pdf-modal__title {
+            color: var(--graphite);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem;
+        }
+
+        .pdf-modal__meta {
+            color: var(--graphite);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .pdf-modal__tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pdf-modal__tab {
+            background: transparent;
+            border: 1px solid var(--light-gray);
+            color: var(--graphite);
+            cursor: pointer;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            padding: 0.65rem 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .pdf-modal__tab.active {
+            background: var(--graphite);
+            border-color: var(--graphite);
+            color: var(--white);
         }
 
         .pdf-modal__close {
@@ -862,17 +1579,66 @@
             border: none;
         }
 
+        .pdf-modal__viewer {
+            min-height: 0;
+        }
+
+        .pdf-modal__video {
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            display: none;
+            object-fit: contain;
+        }
+
+        .pdf-modal__actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .pdf-modal__link {
+            color: var(--olive);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
             .pdf-modal__container {
                 width: 95%;
                 height: 90%;
             }
+
+            .pdf-modal__header {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 1rem 4rem 1rem 1rem;
+            }
+
+            .residence-card__actions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .apartment-explorer {
+                grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.85fr);
+            }
+
+            .apartment-explorer__media {
+                min-height: 620px;
+            }
+
+            .apartment-explorer__actions {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         /* ===== Footer Section ===== */
         .footer {
-            padding: 6rem 2rem 3rem;
-            background-color: var(--graphite);
+            padding: 5rem 2rem 2.5rem;
+            background-color: var(--charcoal);
             color: var(--white);
         }
 
@@ -889,8 +1655,8 @@
 
         .footer__subtitle {
             font-size: 1rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
         }
 
@@ -904,7 +1670,9 @@
             position: relative;
         }
 
-        .form__input {
+        .form__input,
+        .form__select,
+        .form__textarea {
             width: 100%;
             padding: 1.25rem 1rem;
             background-color: rgba(255, 255, 255, 0.1);
@@ -912,33 +1680,58 @@
             color: var(--white);
             font-size: 1rem;
             font-family: var(--font-body);
+            line-height: 1.35;
             transition: var(--transition-fast);
         }
 
-        .form__input::placeholder {
+        .form__select {
+            appearance: none;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .form__select option {
+            color: var(--graphite);
+        }
+
+        .form__textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form__input::placeholder,
+        .form__textarea::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .form__input:focus {
+        .form__input:focus,
+        .form__select:focus,
+        .form__textarea:focus {
             outline: none;
-            border-color: var(--olive);
+            border-color: var(--bronze);
             background-color: rgba(255, 255, 255, 0.15);
         }
 
         .form__submit {
-            padding: 1.25rem 3rem;
-            background-color: var(--olive);
-            color: var(--white);
-            border: 2px solid var(--olive);
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            min-height: 3.25rem;
+            padding: 1rem 2rem;
+            background-color: var(--white);
+            color: var(--charcoal);
+            border: 1px solid var(--white);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.11em;
+            line-height: 1.2;
+            text-align: center;
             text-transform: uppercase;
             transition: var(--transition-smooth);
         }
 
         .form__submit:hover {
             background-color: transparent;
+            color: var(--white);
             border-color: var(--white);
             transform: translateY(-2px);
         }
@@ -1043,28 +1836,138 @@
 
         /* ===== Construction Progress Section ===== */
         .construction {
-            padding: 8rem 2rem;
-            background-color: #1a1a1a;
-            color: var(--white);
+            padding: 6rem 2rem;
+            background-color: var(--ivory);
+            color: var(--graphite);
         }
 
         .construction__header {
             max-width: 1400px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
             text-align: center;
         }
 
         .construction__title {
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--white);
+            color: var(--graphite);
         }
 
         .construction__subtitle {
-            font-size: 1.125rem;
+            font-size: 1rem;
             opacity: 0.7;
-            font-weight: 300;
+            font-weight: 500;
+        }
+
+        .construction-feature {
+            align-items: stretch;
+            background: var(--white);
+            border: 1px solid rgba(37, 36, 33, 0.12);
+            box-shadow: 0 18px 60px rgba(37, 36, 33, 0.08);
+            display: grid;
+            gap: 0;
+            margin: 0 auto 2rem;
+            max-width: 920px;
+            overflow: hidden;
+        }
+
+        .construction-feature__media {
+            background: #eee9df;
+            min-height: 260px;
+        }
+
+        .construction-feature__video {
+            display: block;
+            filter: brightness(1.14) contrast(0.98) saturate(1.06);
+            height: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .construction-feature__body {
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.88);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(1.4rem, 3vw, 2.35rem);
+        }
+
+        .construction-feature__eyebrow {
+            color: var(--bronze);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .construction-feature__title {
+            color: var(--graphite);
+            font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+            line-height: 1.08;
+            margin-bottom: 0.9rem;
+        }
+
+        .construction-feature__text {
+            color: rgba(37, 36, 33, 0.72);
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin-bottom: 1.2rem;
+            max-width: 520px;
+        }
+
+        .construction-feature__meta {
+            color: rgba(37, 36, 33, 0.52);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .construction-placeholder {
+            background: var(--white);
+            border: 1px solid rgba(37, 36, 33, 0.12);
+            display: grid;
+            gap: 1.2rem;
+            margin: 0 auto;
+            max-width: 920px;
+            padding: clamp(1.4rem, 4vw, 3rem);
+            text-align: left;
+        }
+
+        .construction-placeholder__eyebrow {
+            color: var(--bronze);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .construction-placeholder__title {
+            color: var(--graphite);
+            font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+            line-height: 1.1;
+            max-width: 680px;
+        }
+
+        .construction-placeholder__text {
+            color: rgba(37, 36, 33, 0.72);
+            font-size: 0.98rem;
+            line-height: 1.65;
+            max-width: 680px;
+        }
+
+        .construction-placeholder__meta {
+            border-top: 1px solid rgba(37, 36, 33, 0.12);
+            color: rgba(37, 36, 33, 0.58);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            padding-top: 1rem;
+            text-transform: uppercase;
         }
 
         .construction-grid {
@@ -1072,12 +1975,12 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 1.5rem;
         }
 
         .construction-card {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: var(--white);
+            border: 1px solid rgba(37, 36, 33, 0.1);
             overflow: hidden;
             transition: all 0.4s ease;
             opacity: 0;
@@ -1092,7 +1995,7 @@
         .construction-card:hover {
             transform: translateY(-8px);
             border-color: rgba(107, 127, 94, 0.4);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 16px 44px rgba(37, 36, 33, 0.12);
         }
 
         .construction-card__image {
@@ -1123,21 +2026,25 @@
 
         .construction-card__title {
             font-size: 1.75rem;
-            font-weight: 300;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--white);
+            color: var(--graphite);
         }
 
         .construction-card__description {
             font-size: 1rem;
             line-height: 1.7;
             opacity: 0.8;
-            color: var(--white);
+            color: var(--graphite);
         }
 
         @media (min-width: 768px) {
             .construction__title {
                 font-size: 3rem;
+            }
+
+            .construction-feature {
+                grid-template-columns: minmax(280px, 0.78fr) 1fr;
             }
 
             .construction-grid {
@@ -1153,7 +2060,7 @@
 
         /* ===== Location Section ===== */
         .location {
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
             background-color: var(--ivory);
         }
 
@@ -1214,8 +2121,8 @@
         }
 
         .location__distance-value {
-            font-family: 'Roboto', sans-serif !important;
-            font-weight: 500;
+            font-family: var(--font-body);
+            font-weight: 700;
             color: var(--olive);
             letter-spacing: normal;
         }
@@ -1322,19 +2229,11 @@
         /* ===== Responsive Design ===== */
         @media (min-width: 768px) {
             h1 {
-                font-size: 4.5rem;
+                font-size: clamp(2.8rem, 5vw, 4.8rem);
             }
 
             h2 {
-                font-size: 3rem;
-            }
-
-            .nav {
-                display: block;
-            }
-
-            .header__actions {
-                display: flex;
+                font-size: clamp(2rem, 3.8vw, 3.4rem);
             }
 
             .about__container {
@@ -1361,9 +2260,33 @@
             }
         }
 
+        @media (min-width: 1180px) {
+            .header__container {
+                grid-template-columns: minmax(84px, 0.35fr) auto auto auto;
+            }
+
+            .nav {
+                display: block;
+            }
+
+            .header__actions {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 1179px) {
+            .header__container {
+                grid-template-columns: auto 1fr auto;
+            }
+
+            .lang-toggle {
+                grid-column: 3;
+            }
+        }
+
         @media (min-width: 1024px) {
             h1 {
-                font-size: 5.5rem;
+                font-size: clamp(3.2rem, 5.2vw, 5.1rem);
             }
 
             .availability__grid {
@@ -1373,6 +2296,410 @@
             .location__container {
                 grid-template-columns: 1fr 1fr;
                 gap: 6rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            html {
+                font-size: 15px;
+            }
+
+            .header {
+                padding: 0.75rem 1rem;
+            }
+
+            .header.scrolled {
+                padding: 0.55rem 1rem;
+            }
+
+            .header__container {
+                gap: 0.8rem;
+            }
+
+            .header__logo {
+                min-width: 48px;
+            }
+
+            .nav-logo {
+                height: 42px;
+                max-height: 42px;
+            }
+
+            .lang-toggle {
+                gap: 0.2rem;
+            }
+
+            .lang-toggle__btn {
+                font-size: 0.68rem;
+                padding: 0.25rem 0.36rem;
+            }
+
+            .hero {
+                min-height: 82svh;
+                align-items: flex-end;
+            }
+
+            .hero__overlay {
+                background:
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.2) 100%),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.52) 100%);
+            }
+
+            .hero__content {
+                padding: 6.4rem 1rem 1.35rem;
+            }
+
+            .hero__eyebrow {
+                font-size: 0.62rem;
+                letter-spacing: 0.12em;
+                margin-bottom: 0.7rem;
+            }
+
+            .hero__brand-main {
+                font-size: clamp(2.35rem, 14vw, 3.45rem);
+                letter-spacing: -0.035em;
+            }
+
+            .hero__brand-place {
+                font-size: 0.72rem;
+                gap: 0.65rem;
+                letter-spacing: 0.22em;
+                max-width: 100%;
+            }
+
+            .hero__brand-place::before {
+                width: 2.35rem;
+            }
+
+            .hero__subheadline {
+                font-size: 0.95rem;
+                letter-spacing: 0;
+                margin-bottom: 1.1rem;
+                max-width: 22rem;
+            }
+
+            .cta-button {
+                min-height: 2.9rem;
+                padding: 0.74rem 1rem;
+                width: 100%;
+            }
+
+            .hero__proof {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.75rem 0.9rem;
+                margin-top: 1.15rem;
+                padding-top: 0.8rem;
+            }
+
+            .hero__proof-value {
+                font-size: 1rem;
+            }
+
+            .hero__proof-label {
+                font-size: 0.58rem;
+                letter-spacing: 0.07em;
+            }
+
+            .about,
+            .pricing,
+            .availability,
+            .construction,
+            .location {
+                padding: 3.25rem 1rem;
+            }
+
+            .about__container,
+            .location__container {
+                gap: 2.2rem;
+            }
+
+            .about__description,
+            .location__description,
+            .construction-card__description,
+            .construction-feature__text {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+
+            .interiors__content {
+                padding: 3.5rem 1rem;
+            }
+
+            .interiors__list-item {
+                font-size: 0.95rem;
+            }
+
+            .pricing__header,
+            .construction__header {
+                margin-bottom: 2rem;
+            }
+
+            .pricing__title,
+            .construction__title,
+            .location__title {
+                font-size: clamp(1.75rem, 10vw, 2.55rem);
+            }
+
+            .pricing__subtitle {
+                font-size: 0.92rem;
+                max-width: none;
+            }
+
+            .pricing-table {
+                background: transparent;
+                border: 0;
+                display: grid;
+                gap: 0.85rem;
+            }
+
+            .pricing-table__row {
+                background: var(--white);
+                border: 1px solid rgba(37, 36, 33, 0.12);
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.55rem 0.85rem;
+                padding: 0.85rem;
+            }
+
+            .pricing-table__cell {
+                border-bottom: 0;
+                font-size: 0.8rem;
+                line-height: 1.25;
+                padding: 0;
+            }
+
+            .pricing-table__cell:last-child {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .pricing-table__cell--unit {
+                grid-column: 1 / -1;
+                font-size: 0.98rem;
+            }
+
+            .pricing-table__cell::before {
+                font-size: 0.48rem;
+                letter-spacing: 0.07em;
+                line-height: 1.15;
+                margin-bottom: 0.12rem;
+            }
+
+            .pricing-table__actions {
+                grid-column: 1 / -1;
+                width: 100%;
+            }
+
+            .pricing-table__action {
+                align-items: center;
+                border: 1px solid var(--graphite);
+                color: var(--graphite);
+                display: inline-flex;
+                justify-content: center;
+                min-height: 2.75rem;
+                width: 100%;
+            }
+
+            .pricing__footer {
+                padding: 0.85rem 1rem;
+            }
+
+            .availability__grid {
+                gap: 0.85rem;
+            }
+
+            .availability {
+                padding-top: 2.25rem;
+            }
+
+            .residence-card:hover,
+            .construction-card:hover,
+            .location__map-link:hover {
+                transform: none;
+            }
+
+            .residence-card {
+                display: grid;
+                grid-template-columns: minmax(112px, 0.9fr) minmax(0, 1.1fr);
+                min-height: 0;
+            }
+
+            .residence-card::before {
+                height: 100%;
+                width: 2px;
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            .residence-card:hover::before {
+                transform: scaleY(1);
+            }
+
+            .residence-card__media {
+                aspect-ratio: auto;
+                height: 100%;
+                min-height: 190px;
+            }
+
+            .residence-card__media img {
+                padding: 0.45rem;
+            }
+
+            .residence-card__body {
+                gap: 0.65rem;
+                padding: 0.9rem;
+            }
+
+            .residence-card__topline {
+                gap: 0.45rem;
+            }
+
+            .residence-card__status {
+                font-size: 0.5rem;
+                letter-spacing: 0.045em;
+                padding: 0.34rem 0.42rem;
+            }
+
+            .residence-card__number {
+                font-size: 1.02rem;
+                margin-bottom: 0.18rem;
+            }
+
+            .residence-card__unit {
+                font-size: 0.68rem;
+                line-height: 1.35;
+            }
+
+            .residence-card__facts {
+                gap: 0.48rem;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .residence-card__fact-label {
+                font-size: 0.5rem;
+                letter-spacing: 0.045em;
+                line-height: 1.2;
+                margin-bottom: 0.12rem;
+            }
+
+            .residence-card__fact-value {
+                font-size: 0.82rem;
+                line-height: 1.2;
+            }
+
+            .residence-card__rooms,
+            .residence-card__source {
+                display: none;
+            }
+
+            .residence-card__room {
+                font-size: 0.72rem;
+            }
+
+            .residence-card__actions {
+                gap: 0.45rem;
+                grid-template-columns: 1fr;
+            }
+
+            .residence-card__button {
+                font-size: 0.58rem;
+                letter-spacing: 0.055em;
+                min-height: 2.25rem;
+                padding: 0.48rem 0.55rem;
+            }
+
+            .construction-feature__media {
+                min-height: 190px;
+            }
+
+            .construction-feature__video {
+                max-height: 260px;
+            }
+
+            .construction-card__image,
+            .location__map-image {
+                height: 280px;
+            }
+
+            .construction-card__content {
+                padding: 1.15rem;
+            }
+
+            .construction-card__title {
+                font-size: 1.25rem;
+            }
+
+            .location__distance-item {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.25rem;
+                padding: 0.9rem 0;
+            }
+
+            .location__map-label {
+                bottom: 1rem;
+                font-size: 0.68rem;
+                padding: 0.75rem 1rem;
+                width: calc(100% - 2rem);
+                text-align: center;
+            }
+
+            .footer {
+                padding: 3.75rem 1rem 2rem;
+            }
+
+            .footer__title {
+                font-size: clamp(1.85rem, 10vw, 2.7rem);
+            }
+
+            .footer__subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.6rem;
+            }
+
+            .form {
+                gap: 1rem;
+            }
+
+            .form__input,
+            .form__select,
+            .form__textarea {
+                font-size: 0.95rem;
+                padding: 1rem 0.9rem;
+            }
+
+            .footer__copyright {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 2.5rem;
+            }
+
+            .footer__separator {
+                display: none;
+            }
+
+            .cookie-banner {
+                padding: 1rem;
+            }
+
+            .pdf-modal {
+                padding: 0.6rem;
+            }
+
+            .pdf-modal__container {
+                height: 92%;
+                width: 100%;
+            }
+
+            .pdf-modal__tabs,
+            .pdf-modal__actions {
+                width: 100%;
+            }
+
+            .pdf-modal__tab {
+                flex: 1;
             }
         }
     </style>
@@ -1387,8 +2714,8 @@
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="#about" class="nav__link" data-i18n="nav_design">Design</a></li>
-                    <li><a href="#pricing" class="nav__link" data-i18n="nav_pricing">Pricing</a></li>
-                    <li><a href="#availability" class="nav__link" data-i18n="nav_collection">Collection</a></li>
+                    <li><a href="#pricing" class="nav__link" data-i18n="nav_pricing">Residences</a></li>
+                    <li><a href="#construction" class="nav__link" data-i18n="nav_collection">Progress</a></li>
                     <li><a href="#location" class="nav__link" data-i18n="nav_location">Location</a></li>
                 </ul>
             </nav>
@@ -1398,8 +2725,8 @@
                 <button class="lang-toggle__btn" data-lang="cs" onclick="changeLanguage('cs')">CZ</button>
             </div>
             <div class="header__actions">
-                <a href="#availability" class="header__btn header__btn--primary"
-                    data-i18n="btn_available_units">Available Units</a>
+                <a href="#pricing" class="header__btn header__btn--primary"
+                    data-i18n="btn_available_units">Townhouses</a>
                 <a href="#contact" class="header__btn header__btn--secondary" data-i18n="btn_get_in_touch">Get in
                     Touch</a>
             </div>
@@ -1415,10 +2742,31 @@
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__content">
-            <h1 class="hero__headline" data-i18n="hero_headline"><span style="font-weight: 700;">Privacy in Harmony with
-                    Nature</span></h1>
-            <p class="hero__subheadline" data-i18n="hero_subheadline">A Private Collection of 6 Residences</p>
-            <a href="#availability" class="cta-button" id="cta-view-plans" data-i18n="hero_cta">View Floor Plans</a>
+            <p class="hero__eyebrow" data-i18n="hero_eyebrow">Trade Estate Development · Prague 5</p>
+            <h1 class="hero__headline" data-i18n="hero_headline">
+                <span class="hero__brand-main">Rock House</span>
+                <span class="hero__brand-place">Prague</span>
+            </h1>
+            <p class="hero__subheadline" data-i18n="hero_subheadline">Six boutique townhouses above Prokop Valley</p>
+            <a href="#pricing" class="cta-button" id="cta-view-plans" data-i18n="hero_cta">View Floor Plans</a>
+            <div class="hero__proof">
+                <div class="hero__proof-item">
+                    <span class="hero__proof-value">6</span>
+                    <span class="hero__proof-label" data-i18n="hero_proof_units">boutique townhouses</span>
+                </div>
+                <div class="hero__proof-item">
+                    <span class="hero__proof-value" data-i18n="hero_proof_orientation_value">Prague 5</span>
+                    <span class="hero__proof-label" data-i18n="hero_proof_orientation">above Prokop Valley</span>
+                </div>
+                <div class="hero__proof-item">
+                    <span class="hero__proof-value" data-i18n="hero_proof_docs_value">Private</span>
+                    <span class="hero__proof-label" data-i18n="hero_proof_docs">entrances & outdoor spaces</span>
+                </div>
+                <div class="hero__proof-item">
+                    <span class="hero__proof-value" data-i18n="hero_proof_approval_value">Summer 2026</span>
+                    <span class="hero__proof-label" data-i18n="hero_proof_approval">Expected final approval</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1446,6 +2794,32 @@
         </div>
     </section>
 
+    <section class="developer-proof" aria-label="Developer credentials">
+        <div class="developer-proof__container">
+            <div>
+                <p class="developer-proof__eyebrow" data-i18n="developer_eyebrow">By Trade Estate</p>
+                <p class="developer-proof__text" data-i18n="developer_text">
+                    A development and asset-management group with long-cycle real estate experience, positioning Rock
+                    House Prague as a quiet boutique project with transparent apartment documentation.
+                </p>
+            </div>
+            <div class="developer-proof__stats">
+                <div class="developer-proof__stat">
+                    <span class="developer-proof__value">18+</span>
+                    <span class="developer-proof__label" data-i18n="developer_stat_1">years experience</span>
+                </div>
+                <div class="developer-proof__stat">
+                    <span class="developer-proof__value">13</span>
+                    <span class="developer-proof__label" data-i18n="developer_stat_2">completed projects</span>
+                </div>
+                <div class="developer-proof__stat">
+                    <span class="developer-proof__value" data-i18n="developer_stat_3_value">Summer 2026</span>
+                    <span class="developer-proof__label" data-i18n="developer_stat_3">expected approval</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Interiors Section -->
     <section class="interiors" id="interiors">
         <div class="interiors__container">
@@ -1458,9 +2832,9 @@
                 <ul class="interiors__list">
                     <li class="interiors__list-item" data-i18n="interiors_feature1">Panoramic Floor-to-Ceiling Windows
                     </li>
-                    <li class="interiors__list-item" data-i18n="interiors_feature4">Custom Built-In Wardrobes</li>
-                    <li class="interiors__list-item" data-i18n="interiors_feature5">Smart Home Integration</li>
-                    <li class="interiors__list-item" data-i18n="interiors_feature6">Private Outdoor Terraces</li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature4">Private Entrances</li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature5">Verified Project Plans</li>
+                    <li class="interiors__list-item" data-i18n="interiors_feature6">Terraces and Gardens</li>
                 </ul>
             </div>
         </div>
@@ -1469,171 +2843,16 @@
     <!-- Availability & Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="pricing__header">
-            <h2 class="pricing__title" data-i18n="pricing_title">Availability & Pricing</h2>
-            <p class="pricing__subtitle" data-i18n="pricing_subtitle">Exclusive Collection of 6 Residential Units</p>
+            <h2 class="pricing__title" data-i18n="pricing_title">Residence Overview</h2>
+            <p class="pricing__subtitle" data-i18n="pricing_subtitle">Verified layouts, outdoor areas and NV 366/2013 area values</p>
         </div>
 
         <div class="pricing__container">
-            <div class="pricing-table">
-                <!-- Table Header -->
-                <div class="pricing-table__header">
-                    <div class="pricing-table__header-cell" data-i18n="table_unit">Unit</div>
-                    <div class="pricing-table__header-cell" data-i18n="table_layout">Layout</div>
-                    <div class="pricing-table__header-cell" data-i18n="table_interior">Interior Area</div>
-                    <div class="pricing-table__header-cell" data-i18n="table_terrace">Terrace/Garden</div>
-                    <div class="pricing-table__header-cell" data-i18n="table_price">Price (excl. VAT)</div>
-                    <div class="pricing-table__header-cell" data-i18n="table_status">Status</div>
-                    <div class="pricing-table__header-cell"></div>
-                </div>
-
-                <!-- Unit 01 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 01 (S01)</div>
-                    <div class="pricing-table__cell" data-label="Layout">3+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">93.0 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">62.0 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">15,810,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-
-                <!-- Unit 02 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 02 (S01)</div>
-                    <div class="pricing-table__cell" data-label="Layout">3+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">119.2 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">11.0 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">22,648,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-
-                <!-- Unit 03 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 03 (S01)</div>
-                    <div class="pricing-table__cell" data-label="Layout">4+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">110.1 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">42.9 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">18,717,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-
-                <!-- Unit 04 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 04 (S02)</div>
-                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">72.2 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">51.1 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">13,718,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-
-                <!-- Unit 05 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 05 (S02)</div>
-                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">79.1 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">108.6 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">15,029,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-
-                <!-- Unit 06 -->
-                <div class="pricing-table__row">
-                    <div class="pricing-table__cell pricing-table__cell--unit" data-label="Unit">Unit 06 (S02)</div>
-                    <div class="pricing-table__cell" data-label="Layout">2+kk</div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Interior Area">81.3 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--number" data-label="Terrace/Garden">49.3 m²
-                    </div>
-                    <div class="pricing-table__cell pricing-table__cell--price" data-label="Price">13,821,000 CZK</div>
-                    <div class="pricing-table__cell pricing-table__cell--status" data-label="Status"
-                        data-i18n="status_available">Available</div>
-                    <div class="pricing-table__cell">
-                        <a href="#contact" class="pricing-table__inquire" data-i18n="btn_inquire">Inquire</a>
-                    </div>
-                </div>
-            </div>
+            <div class="availability__grid" id="residenceGrid"></div>
 
             <!-- Pricing Footer -->
             <div class="pricing__footer">
-                <p class="pricing__footer-text" data-i18n="pricing_footer">Each apartment requires the purchase of a
-                    parking space and a storage
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Availability Section -->
-    <section class="availability" id="availability">
-        <div class="availability__header">
-            <h2 class="availability__title" data-i18n="availability_title">Exclusive Collection</h2>
-            <p class="availability__subtitle" data-i18n="availability_subtitle">Only 6 residences available</p>
-        </div>
-        <div class="availability__grid">
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_01">Residence 01</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="01" data-i18n="btn_view_plan">View Plan</button>
-            </div>
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_02">Residence 02</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="02" data-i18n="btn_view_plan">View Plan</button>
-            </div>
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_03">Residence 03</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="03" data-i18n="btn_view_plan">View Plan</button>
-            </div>
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_04">Residence 04</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="04" data-i18n="btn_view_plan">View Plan</button>
-            </div>
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_05">Residence 05</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="05" data-i18n="btn_view_plan">View Plan</button>
-            </div>
-            <div class="residence-card">
-
-                <h3 class="residence-card__number" data-i18n="residence_06">Residence 06</h3>
-                <span class="residence-card__status" data-i18n="status_available">Available</span>
-                <button class="residence-card__button" data-residence="06" data-i18n="btn_view_plan">View Plan</button>
+                <p class="pricing__footer-text" data-i18n="pricing_footer">A concise reference based on project documentation, room-table totals and verified outdoor areas.</p>
             </div>
         </div>
     </section>
@@ -1652,20 +2871,28 @@
                 </p>
                 <ul class="location__distances">
                     <li class="location__distance-item">
-                        <span class="location__distance-label">City Center</span>
-                        <span class="location__distance-value">15 min drive</span>
+                        <span class="location__distance-label" data-i18n="location_point_1_label">Prokopské & Dalejské údolí</span>
+                        <span class="location__distance-value" data-i18n="location_point_1_value">natural park access</span>
                     </li>
                     <li class="location__distance-item">
-                        <span class="location__distance-label">Václav Havel Airport</span>
-                        <span class="location__distance-value">20 min drive</span>
+                        <span class="location__distance-label" data-i18n="location_point_2_label">Nové Butovice / Jinonice</span>
+                        <span class="location__distance-value" data-i18n="location_point_2_value">Metro B connection</span>
                     </li>
                     <li class="location__distance-item">
-                        <span class="location__distance-label">International School of Prague</span>
-                        <span class="location__distance-value">12 min drive</span>
+                        <span class="location__distance-label" data-i18n="location_point_3_label">Galerie Butovice</span>
+                        <span class="location__distance-value" data-i18n="location_point_3_value">shopping and daily services</span>
                     </li>
                     <li class="location__distance-item">
-                        <span class="location__distance-label">Prokopské údolí Park</span>
-                        <span class="location__distance-value">5 min walk</span>
+                        <span class="location__distance-label" data-i18n="location_point_4_label">Deutsche Schule Prag</span>
+                        <span class="location__distance-value" data-i18n="location_point_4_value">Prague 5 Jinonice</span>
+                    </li>
+                    <li class="location__distance-item">
+                        <span class="location__distance-label" data-i18n="location_point_5_label">International School of Prague</span>
+                        <span class="location__distance-value" data-i18n="location_point_5_value">Prague 6 Nebušice</span>
+                    </li>
+                    <li class="location__distance-item">
+                        <span class="location__distance-label" data-i18n="location_point_6_label">Václav Havel Airport Prague</span>
+                        <span class="location__distance-value" data-i18n="location_point_6_value">international airport access</span>
                     </li>
                 </ul>
             </div>
@@ -1685,7 +2912,7 @@
                     </svg>
 
                     <!-- Hover Label -->
-                    <span class="location__map-label">Get Directions</span>
+                    <span class="location__map-label" data-i18n="location_map_label">Get Directions</span>
                 </a>
             </div>
         </div>
@@ -1694,11 +2921,16 @@
     <!-- Construction Progress Section -->
     <section class="construction" id="construction">
         <div class="construction__header">
-            <h2 class="construction__title">Průběh stavby</h2>
-            <p class="construction__subtitle">Sledujte postup výstavby v reálném čase</p>
+            <h2 class="construction__title" data-i18n="construction_title">Construction Progress</h2>
+            <p class="construction__subtitle" data-i18n="construction_subtitle">Current site updates, team visits and verified progress toward summer 2026 final approval</p>
         </div>
-        <div class="construction-grid" id="constructionGrid">
-            <!-- Construction updates will be dynamically loaded here -->
+        <div class="construction-placeholder">
+            <span class="construction-placeholder__eyebrow" data-i18n="construction_placeholder_eyebrow">Curated updates</span>
+            <h3 class="construction-placeholder__title" data-i18n="construction_placeholder_title">Dated construction gallery coming soon</h3>
+            <p class="construction-placeholder__text" data-i18n="construction_placeholder_text">
+                We are preparing a selective construction record with clean visuals, dates and short notes for each update.
+            </p>
+            <span class="construction-placeholder__meta" data-i18n="construction_placeholder_meta">Photos and videos will be added after editorial selection</span>
         </div>
     </section>
 
@@ -1720,6 +2952,19 @@
                 <div class="form__group">
                     <input type="tel" class="form__input" id="form-phone" name="phone" placeholder="Phone Number"
                         required>
+                </div>
+                <div class="form__group">
+                    <select class="form__select" id="form-residence" name="residence" required>
+                        <option value="" data-i18n="form_residence_placeholder">Interested Residence</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="form-time" name="preferred_time"
+                        placeholder="Preferred Viewing Time">
+                </div>
+                <div class="form__group">
+                    <textarea class="form__textarea" id="form-note" name="message"
+                        placeholder="Message or questions"></textarea>
                 </div>
                 <button type="submit" class="form__submit" id="form-submit" data-i18n="btn_request_info">Request
                     Information</button>
@@ -1748,56 +2993,83 @@
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
+        <select name="residence"></select>
+        <input type="text" name="preferred_time" />
+        <textarea name="message"></textarea>
         <input type="hidden" name="form-name" value="contact" />
     </form>
 
     <script>
+        if (window.location.protocol === 'file:') {
+            window.location.replace('http://127.0.0.1:8081/');
+        }
+
         // ===== Bilingual Translation System =====
         const translations = {
             en: {
                 // Navigation
                 nav_design: 'Design',
-                nav_pricing: 'Pricing',
-                nav_collection: 'Collection',
+                nav_pricing: 'Residences',
+                nav_collection: 'Progress',
                 nav_location: 'Location',
-                btn_available_units: 'Available Units',
-                btn_get_in_touch: 'Get in Touch',
+                btn_available_units: 'Townhouses',
+                btn_get_in_touch: 'Private Viewing',
 
                 // Hero
-                hero_headline: '<span style="font-weight: 700;">Privacy in Harmony with Nature</span>',
-                hero_subheadline: 'A Private Collection of 6 Residences',
-                hero_cta: 'View Floor Plans',
+                hero_eyebrow: 'Trade Estate Development · Prague 5',
+                hero_headline: '<span class="hero__brand-main">Rock House</span><span class="hero__brand-place">Prague</span>',
+                hero_subheadline: 'Six boutique townhouses above Prokop Valley',
+                hero_cta: 'Explore Residences',
+                hero_proof_units: 'boutique townhouses',
+                hero_proof_orientation_value: 'Prague 5',
+                hero_proof_orientation: 'above Prokop Valley',
+                hero_proof_docs_value: 'Private',
+                hero_proof_docs: 'entrances & outdoor spaces',
+                hero_proof_approval_value: 'Summer 2026',
+                hero_proof_approval: 'Expected final approval',
 
                 // About
-                about_title: 'Eco-Urban Living',
-                about_description1: 'Nestled in perfect harmony between urban convenience and natural serenity, our boutique residence offers an unparalleled living experience. Each of the six exclusive units has been thoughtfully designed to embrace sustainability without compromising on luxury.',
-                about_description2: 'The architecture celebrates the organic beauty of its surroundings, with verdant facades and expansive windows that blur the boundaries between interior and exterior spaces. This is where contemporary design meets environmental consciousness.',
+                about_title: 'A Boutique Address in Prokop Valley',
+                about_description1: 'Rock House Prague is a limited collection of six sunny, south-facing townhouses with private entrances, set into the green context of Prague 5 and the Prokop Valley.',
+                about_description2: 'Each townhouse is presented with a verified project plan, NV 366/2013 area, room-table total and outdoor area, so clients can study the documentation online before a private viewing.',
+
+                // Developer
+                developer_eyebrow: 'By Trade Estate',
+                developer_text: 'A development and asset-management group with long-cycle real estate experience, positioning Rock House Prague as a quiet boutique project with transparent apartment documentation.',
+                developer_stat_1: 'years experience',
+                developer_stat_2: 'completed projects',
+                developer_stat_3_value: 'Summer 2026',
+                developer_stat_3: 'expected approval',
 
                 // Interiors
-                interiors_title: 'Refined Living Spaces',
+                interiors_title: 'Private, South-Facing Living',
                 interiors_feature1: 'Panoramic Floor-to-Ceiling Windows',
-                interiors_feature4: 'Custom Built-In Wardrobes',
-                interiors_feature5: 'Smart Home Integration',
-                interiors_feature6: 'Private Outdoor Terraces',
+                interiors_feature4: 'Private Entrances',
+                interiors_feature5: 'Verified Project Plans',
+                interiors_feature6: 'Terraces and Gardens',
 
                 // Pricing
-                pricing_title: 'Availability & Pricing',
-                pricing_subtitle: 'Exclusive Collection of 6 Residential Units',
+                pricing_title: 'Residence Overview',
+                pricing_subtitle: 'Six townhouses with verified layouts, private outdoor areas and plan documentation',
                 table_unit: 'Unit',
                 table_layout: 'Layout',
-                table_interior: 'Interior Area',
-                table_terrace: 'Terrace/Garden',
+                table_levels: 'Levels',
+                table_nv_area: 'Area according to NV 366/2013',
+                table_room_total: 'Room table total',
+                table_outdoor: 'Outdoor',
+                table_total: 'Unit + outdoor',
                 table_price: 'Price (excl. VAT)',
                 table_status: 'Status',
                 status_available: 'Available',
                 status_reserved: 'Reserved',
                 status_sold: 'Sold',
+                status_info: 'With sales team',
                 btn_inquire: 'Inquire',
-                pricing_footer: 'Each apartment requires the purchase of a parking space and a storage',
+                pricing_footer: 'Area values are shown according to NV 366/2013. Detailed room schedules and source documentation are available in the floor-plan PDF.',
 
                 // Availability
-                availability_title: 'Exclusive Collection',
-                availability_subtitle: 'Only 6 residences available',
+                availability_title: '',
+                availability_subtitle: '',
                 residence_01: 'Residence 01',
                 residence_02: 'Residence 02',
                 residence_03: 'Residence 03',
@@ -1805,21 +3077,67 @@
                 residence_05: 'Residence 05',
                 residence_06: 'Residence 06',
                 btn_view_plan: 'View Plan',
+                btn_watch_video: 'Watch Video',
+                btn_open_pdf: 'Open PDF',
+                btn_request_viewing_short: 'Request Viewing',
+                explorer_badge: 'Verified plan',
+                explorer_source_prefix: 'Source',
+                explorer_source_note: 'Areas and layout are connected to the project documentation.',
+                card_layout: 'Layout',
+                card_levels: 'Levels',
+                card_nv_area: 'Area according to NV 366/2013',
+                card_room_total: 'Room table total',
+                card_interior: 'Interior',
+                card_outdoor: 'Outdoor',
+                card_total: 'Unit + outdoor',
+                card_price: 'Price',
+                price_on_request: 'Price on request',
+                card_status: 'Status',
+                card_source: 'Source',
+                card_rooms: 'Room schedule',
+                modal_plan: 'Plan',
+                modal_video: 'Video',
+
+                // Construction
+                construction_title: 'Construction Progress',
+                construction_subtitle: 'A curated, dated site record will be added once the final photo and video selection is ready',
+                construction_placeholder_eyebrow: 'Curated updates',
+                construction_placeholder_title: 'Dated construction gallery coming soon',
+                construction_placeholder_text: 'We are preparing a selective construction record with clean visuals, dates and short notes for each update.',
+                construction_placeholder_meta: 'Photos and videos will be added after editorial selection',
+                construction_empty: 'No construction updates are available yet.',
+                construction_error: 'Construction updates could not be loaded.',
 
                 // Location
-                location_title: 'Prime Location',
-                location_description: 'Perfectly positioned in one of the city\'s most sought-after neighborhoods, this exclusive residence offers the ideal balance of urban convenience and natural tranquility. Surrounded by verdant parks, cultural landmarks, and premium amenities, every essential destination is within effortless reach.',
+                location_title: 'Life Above Prokop Valley',
+                location_description: 'Rock House Prague is positioned for clients who want a quiet green setting without losing the practical advantages of Prague 5: metro access, daily services, international schools and a direct route toward the airport.',
+                location_point_1_label: 'Prokopské & Dalejské údolí',
+                location_point_1_value: 'natural park access',
+                location_point_2_label: 'Nové Butovice / Jinonice',
+                location_point_2_value: 'Metro B connection',
+                location_point_3_label: 'Galerie Butovice',
+                location_point_3_value: 'shopping and daily services',
+                location_point_4_label: 'Deutsche Schule Prag',
+                location_point_4_value: 'Prague 5 Jinonice',
+                location_point_5_label: 'International School of Prague',
+                location_point_5_value: 'Prague 6 Nebušice',
+                location_point_6_label: 'Václav Havel Airport Prague',
+                location_point_6_value: 'international airport access',
+                location_map_label: 'Get Directions',
 
                 // Footer
-                footer_title: 'Download Presentation & Pricing',
-                footer_subtitle: 'Receive our exclusive brochure with detailed information',
-                btn_request_info: 'Request Information',
+                footer_title: 'Arrange a Private Viewing',
+                footer_subtitle: 'Request a residence dossier, verified plans and a personal appointment',
+                btn_request_info: 'Request Private Viewing',
 
 
                 // Form Placeholders
                 form_name_placeholder: 'Your Name',
                 form_email_placeholder: 'Your Email',
                 form_phone_placeholder: 'Phone Number',
+                form_residence_placeholder: 'Interested Residence',
+                form_time_placeholder: 'Preferred Viewing Time',
+                form_note_placeholder: 'Message or questions',
                 footer_copyright: '© 2026 Trade Estate. All Rights Reserved.',
 
                 // Form Messages
@@ -1829,47 +3147,67 @@
             cs: {
                 // Navigation
                 nav_design: 'Design',
-                nav_pricing: 'Ceny',
-                nav_collection: 'Kolekce',
+                nav_pricing: 'Přehled',
+                nav_collection: 'Stavba',
                 nav_location: 'Lokalita',
-                btn_available_units: 'Nabídka Jednotek',
-                btn_get_in_touch: 'Napište Nám',
+                btn_available_units: 'Townhouse',
+                btn_get_in_touch: 'Soukromá Prohlídka',
 
                 // Hero
-                hero_headline: '<span style="font-weight: 700;">Soukromí v harmonii s přírodou</span>',
-                hero_subheadline: 'Soukromá kolekce 6 rezidencí',
-                hero_cta: 'Zobrazit Půdorysy',
+                hero_eyebrow: 'Trade Estate Development · Praha 5',
+                hero_headline: '<span class="hero__brand-main">Rock House</span><span class="hero__brand-place">Prague</span>',
+                hero_subheadline: 'Šest butikových townhouse nad Prokopským údolím',
+                hero_cta: 'Prozkoumat Rezidence',
+                hero_proof_units: 'butikových townhouse',
+                hero_proof_orientation_value: 'Praha 5',
+                hero_proof_orientation: 'nad Prokopským údolím',
+                hero_proof_docs_value: 'Soukromé',
+                hero_proof_docs: 'vstupy a venkovní plochy',
+                hero_proof_approval_value: 'Léto 2026',
+                hero_proof_approval: 'Předpokládaná kolaudace',
 
                 // About
-                about_title: 'Eko-městské bydlení',
-                about_description1: 'Naše butikové rezidence je zasazena v dokonalé harmonii mezi městským pohodlím a přírodním klidem a nabízí jedinečný zážitek z bydlení. Každá ze šesti exkluzivních jednotek byla pečlivě navržena tak, aby přijala udržitelnost bez kompromisů v oblasti luxusu.',
-                about_description2: 'Architektura oslavuje organickou krásu svého okolí se zelenými fasádami a expansivními okny, která rozmazávají hranice mezi vnitřními a vnějšími prostory. Toto je místo, kde se setkává současný design s ekologickým uvědoměním.',
+                about_title: 'Butiková adresa u Prokopského údolí',
+                about_description1: 'Rock House Prague je limitovaná kolekce šesti světlých, jižně orientovaných townhouse se samostatnými soukromými vstupy v zeleném prostředí Prahy 5.',
+                about_description2: 'Každý townhouse má ověřený projektový půdorys, plochu dle NV 366/2013, součet místností a venkovní plochu, aby si klient mohl dokumentaci prostudovat online před soukromou prohlídkou.',
+
+                // Developer
+                developer_eyebrow: 'By Trade Estate',
+                developer_text: 'Developerská a asset-management skupina s dlouhodobou zkušeností v nemovitostech představuje Rock House Prague jako klidný butikový projekt s transparentní dokumentací jednotek.',
+                developer_stat_1: 'let zkušeností',
+                developer_stat_2: 'dokončených projektů',
+                developer_stat_3_value: 'Léto 2026',
+                developer_stat_3: 'předpokládaná kolaudace',
 
                 // Interiors
-                interiors_title: 'Rafinované obytné prostory',
+                interiors_title: 'Soukromé jižně orientované bydlení',
                 interiors_feature1: 'Panoramatická okna od podlahy ke stropu',
-                interiors_feature4: 'Vestavěné skříně na míru',
-                interiors_feature5: 'Integrace chytrého domova',
-                interiors_feature6: 'Soukromé venkovní terasy',
+                interiors_feature4: 'Soukromé vstupy',
+                interiors_feature5: 'Ověřené projektové půdorysy',
+                interiors_feature6: 'Terasy a zahrady',
 
                 // Pricing
-                pricing_title: 'Dostupnost a ceny',
-                pricing_subtitle: 'Exkluzivní kolekce 6 rezidenčních jednotek',
+                pricing_title: 'Přehled rezidencí',
+                pricing_subtitle: 'Šest townhouse s ověřenými dispozicemi, soukromými venkovními plochami a projektovou dokumentací',
                 table_unit: 'Jednotka',
                 table_layout: 'Dispozice',
-                table_interior: 'Podlahová Plocha',
-                table_terrace: 'Terasa/Zahrada',
+                table_levels: 'Úrovně',
+                table_nv_area: 'Plocha dle NV 366/2013',
+                table_room_total: 'Součet místností',
+                table_outdoor: 'Exteriér',
+                table_total: 'Jednotka + exteriér',
                 table_price: 'Cena (bez DPH)',
                 table_status: 'Stav',
                 status_available: 'Volné',
                 status_reserved: 'Rezervováno',
                 status_sold: 'Prodáno',
+                status_info: 'U prodejce',
                 btn_inquire: 'Informovat se',
-                pricing_footer: 'Každý byt vyžaduje nákup parkovacího místa a komory',
+                pricing_footer: 'Plochy jsou uvedeny dle NV 366/2013. Detailní tabulka místností a zdrojová dokumentace jsou k dispozici v PDF půdorysu.',
 
                 // Availability
-                availability_title: 'Exkluzivní kolekce',
-                availability_subtitle: 'Pouze 6 dostupných rezidencí',
+                availability_title: '',
+                availability_subtitle: '',
                 residence_01: 'Rezidence 01',
                 residence_02: 'Rezidence 02',
                 residence_03: 'Rezidence 03',
@@ -1877,21 +3215,67 @@
                 residence_05: 'Rezidence 05',
                 residence_06: 'Rezidence 06',
                 btn_view_plan: 'Zobrazit Půdorys',
+                btn_watch_video: 'Přehrát Video',
+                btn_open_pdf: 'Otevřít PDF',
+                btn_request_viewing_short: 'Požádat o prohlídku',
+                explorer_badge: 'Ověřený půdorys',
+                explorer_source_prefix: 'Zdroj',
+                explorer_source_note: 'Plochy a dispozice jsou propojené s projektovou dokumentací.',
+                card_layout: 'Dispozice',
+                card_levels: 'Úrovně',
+                card_nv_area: 'Plocha dle NV 366/2013',
+                card_room_total: 'Součet místností',
+                card_interior: 'Interiér',
+                card_outdoor: 'Exteriér',
+                card_total: 'Jednotka + exteriér',
+                card_price: 'Cena',
+                price_on_request: 'Cena na vyžádání',
+                card_status: 'Stav',
+                card_source: 'Zdroj',
+                card_rooms: 'Tabulka místností',
+                modal_plan: 'Půdorys',
+                modal_video: 'Video',
+
+                // Construction
+                construction_title: 'Průběh stavby',
+                construction_subtitle: 'Kurátorský přehled stavby s daty bude doplněn po finálním výběru fotografií a videí',
+                construction_placeholder_eyebrow: 'Připravujeme výběr',
+                construction_placeholder_title: 'Datovaná galerie ze stavby bude doplněna',
+                construction_placeholder_text: 'Připravujeme selektivní záznam stavby s čistými vizuály, daty a krátkým komentářem ke každé aktualizaci.',
+                construction_placeholder_meta: 'Fotografie a videa budou přidány po kurátorském výběru',
+                construction_empty: 'Zatím nejsou k dispozici žádné aktualizace.',
+                construction_error: 'Nepodařilo se načíst aktualizace stavby.',
 
                 // Location
-                location_title: 'Vynikající lokalita',
-                location_description: 'Perfektně umístěná v jedné z nejvyhledávanějších čtvrtí města, tato exkluzivní rezidence nabízí ideální rovnováhu mezi městským pohodlím a přírodním klidem. Obklopená zelenými parky, kulturními památkami a prémiovými službami, každá důležitá destinace je na dosah ruky.',
+                location_title: 'Bydlení nad Prokopským údolím',
+                location_description: 'Rock House Prague je situován pro klienty, kteří hledají klidné zelené prostředí bez ztráty praktických výhod Prahy 5: napojení na metro, každodenní služby, mezinárodní školy a přirozený směr k letišti.',
+                location_point_1_label: 'Prokopské a Dalejské údolí',
+                location_point_1_value: 'přístup do přírodního parku',
+                location_point_2_label: 'Nové Butovice / Jinonice',
+                location_point_2_value: 'napojení na metro B',
+                location_point_3_label: 'Galerie Butovice',
+                location_point_3_value: 'nákupy a každodenní služby',
+                location_point_4_label: 'Deutsche Schule Prag',
+                location_point_4_value: 'Praha 5 Jinonice',
+                location_point_5_label: 'International School of Prague',
+                location_point_5_value: 'Praha 6 Nebušice',
+                location_point_6_label: 'Letiště Václava Havla Praha',
+                location_point_6_value: 'mezinárodní letiště',
+                location_map_label: 'Zobrazit trasu',
 
                 // Footer
-                footer_title: 'Stáhnout prezentaci a ceny',
-                footer_subtitle: 'Získejte naši exkluzivní brožuru s podrobnými informacemi',
-                btn_request_info: 'Žádost o informace',
+                footer_title: 'Domluvit soukromou prohlídku',
+                footer_subtitle: 'Vyžádejte si dossier rezidence, ověřené půdorysy a osobní termín',
+                btn_request_info: 'Požádat o prohlídku',
                 footer_copyright: '© 2024 Boutique Residences. Všechna práva vyhrazena.',
 
                 // Form Placeholders
                 form_name_placeholder: 'Vaše jméno',
                 form_email_placeholder: 'Váš e-mail',
                 form_phone_placeholder: 'Telefonní číslo',
+                form_residence_placeholder: 'Vybraná rezidence',
+                form_time_placeholder: 'Preferovaný termín prohlídky',
+                form_note_placeholder: 'Zpráva nebo dotazy',
                 footer_copyright: '© 2026 Trade Estate. Všechna práva vyhrazena.',
 
                 // Form Messages
@@ -1922,9 +3306,13 @@
             const formName = document.getElementById('form-name');
             const formEmail = document.getElementById('form-email');
             const formPhone = document.getElementById('form-phone');
+            const formTime = document.getElementById('form-time');
+            const formNote = document.getElementById('form-note');
             if (formName) formName.placeholder = translations[lang].form_name_placeholder;
             if (formEmail) formEmail.placeholder = translations[lang].form_email_placeholder;
             if (formPhone) formPhone.placeholder = translations[lang].form_phone_placeholder;
+            if (formTime) formTime.placeholder = translations[lang].form_time_placeholder;
+            if (formNote) formNote.placeholder = translations[lang].form_note_placeholder;
 
             // Update active language button
             document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
@@ -1933,6 +3321,12 @@
                     btn.classList.add('active');
                 }
             });
+
+            if (apartmentCatalogue.length) {
+                renderApartmentCatalogue(apartmentCatalogue);
+                populateResidenceSelect(apartmentCatalogue, activeExplorerResidenceId);
+            }
+
         }
 
         // Initialize language on page load
@@ -1999,76 +3393,143 @@
             }
         });
 
-        // ===== Load and Update Unit Statuses =====
-        async function loadUnitStatuses() {
-            try {
-                const response = await fetch('bookings.json');
-                const data = await response.json();
-                const units = data.apartments || [];
+        let apartmentCatalogue = [];
+        let activeExplorerResidenceId = null;
 
-                const statusKeyMap = {
-                    'available': 'status_available',
-                    'reserved': 'status_reserved',
-                    'sold': 'status_sold'
-                };
-
-                const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-
-                units.forEach((unit, index) => {
-                    const statusKey = statusKeyMap[unit.status.toLowerCase()] || 'status_available';
-                    const statusText = (translations[currentLang] && translations[currentLang][statusKey])
-                        ? translations[currentLang][statusKey]
-                        : unit.status;
-
-                    // Update residence card
-                    const residenceCards = document.querySelectorAll('.residence-card');
-                    if (residenceCards[index]) {
-                        const card = residenceCards[index];
-                        const statusElement = card.querySelector('.residence-card__status');
-                        if (statusElement) {
-                            statusElement.textContent = statusText;
-                            statusElement.setAttribute('data-i18n', statusKey);
-
-                            // Remove all status classes
-                            statusElement.classList.remove('residence-card__status--available');
-                            statusElement.classList.remove('residence-card__status--reserved');
-                            statusElement.classList.remove('residence-card__status--sold');
-
-                            // Add appropriate class based on status
-                            const statusClass = 'residence-card__status--' + unit.status.toLowerCase();
-                            statusElement.classList.add(statusClass);
-                        }
-                    }
-
-                    // Update pricing table row
-                    const tableRows = document.querySelectorAll('.pricing-table__row');
-                    if (tableRows[index]) {
-                        const tableStatusCell = tableRows[index].querySelector('.pricing-table__cell--status');
-                        if (tableStatusCell) {
-                            tableStatusCell.textContent = statusText;
-                            tableStatusCell.setAttribute('data-i18n', statusKey);
-                        }
-
-                        // Update price cell from bookings.json
-                        const tablePriceCell = tableRows[index].querySelector('.pricing-table__cell--price');
-                        if (tablePriceCell && unit.price !== undefined) {
-                            tablePriceCell.textContent = unit.price;
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error('Failed to load unit statuses:', error);
-                // Fail silently - page will show default "Available" status
-            }
+        function t(key) {
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            return translations[currentLang]?.[key] || translations.en[key] || key;
         }
 
-        // Load unit statuses on page load
-        document.addEventListener('DOMContentLoaded', loadUnitStatuses);
+        function localizeValue(value) {
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (value && typeof value === 'object') {
+                return value[currentLang] || value.en || value.cs || '';
+            }
+            return value || '';
+        }
+
+        function getStatusKey(status) {
+            const normalized = (status || '').toLowerCase();
+            if (normalized === 'info' || normalized === 'on_request' || normalized === 'unknown') return 'status_info';
+            if (normalized === 'reserved') return 'status_reserved';
+            if (normalized === 'sold') return 'status_sold';
+            if (normalized === 'available') return 'status_available';
+            return 'status_info';
+        }
+
+        function getPriceLabel(price) {
+            return price && String(price).trim() ? price : t('price_on_request');
+        }
+
+        function getStatusLabel(status) {
+            return t(getStatusKey(status));
+        }
+
+        function getStatusModifier(status) {
+            const normalized = (status || '').toLowerCase();
+            if (normalized === 'info' || normalized === 'on_request' || normalized === 'unknown' || !normalized) return ' residence-card__status--info';
+            if (normalized === 'reserved') return ' residence-card__status--reserved';
+            if (normalized === 'sold') return ' residence-card__status--sold';
+            if (normalized === 'available') return ' residence-card__status--available';
+            return ' residence-card__status--info';
+        }
+
+        function populateResidenceSelect(units, selectedId = activeExplorerResidenceId) {
+            const select = document.getElementById('form-residence');
+            if (!select || !units.length) return;
+
+            select.innerHTML = `
+                <option value="">${t('form_residence_placeholder')}</option>
+                ${units.map(unit => `<option value="${unit.residence} / ${unit.unit}" ${unit.id === selectedId ? 'selected' : ''}>${unit.residence} · ${unit.layout} · ${unit.nvArea}</option>`).join('')}
+            `;
+        }
+
+        function selectResidenceForViewing(residenceId) {
+            const unit = apartmentCatalogue.find(item => item.id === residenceId);
+            if (!unit) return;
+
+            activeExplorerResidenceId = unit.id;
+            populateResidenceSelect(apartmentCatalogue, unit.id);
+
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            setTimeout(() => {
+                document.getElementById('form-name')?.focus();
+            }, 450);
+        }
+
+        function renderApartmentCatalogue(units) {
+            const residenceGrid = document.getElementById('residenceGrid');
+
+            if (!residenceGrid) return;
+
+            residenceGrid.innerHTML = units.map(unit => {
+                return `
+                    <article class="residence-card">
+                        <button class="residence-card__media" data-action="plan" data-residence="${unit.id}" aria-label="${t('btn_view_plan')} ${unit.residence}">
+                            <img src="${unit.planPreview || unit.sitePlan}" alt="${unit.residence} verified floor plan">
+                        </button>
+                        <div class="residence-card__body">
+                            <div class="residence-card__topline">
+                                <div>
+                                    <h3 class="residence-card__number">${unit.residence}</h3>
+                                    <p class="residence-card__unit">${unit.building} · ${unit.layout} · ${unit.levels}</p>
+                                </div>
+                                <span class="residence-card__status${getStatusModifier(unit.status)}">${getStatusLabel(unit.status)}</span>
+                            </div>
+                            <div class="residence-card__facts">
+                                <div>
+                                    <span class="residence-card__fact-label">${t('card_price')}</span>
+                                    <span class="residence-card__fact-value">${getPriceLabel(unit.price)}</span>
+                                </div>
+                                <div>
+                                    <span class="residence-card__fact-label">${t('card_nv_area')}</span>
+                                    <span class="residence-card__fact-value">${unit.nvArea}</span>
+                                </div>
+                                <div>
+                                    <span class="residence-card__fact-label">${t('card_outdoor')}</span>
+                                    <span class="residence-card__fact-value">${unit.outdoorType} ${unit.outdoorArea}</span>
+                                </div>
+                                <div>
+                                    <span class="residence-card__fact-label">${t('card_total')}</span>
+                                    <span class="residence-card__fact-value">${unit.totalArea}</span>
+                                </div>
+                            </div>
+                            <div class="residence-card__actions">
+                                <button class="residence-card__button residence-card__button--primary" data-action="plan" data-residence="${unit.id}">${t('btn_view_plan')}</button>
+                                <button class="residence-card__button" data-action="video" data-residence="${unit.id}">${t('btn_watch_video')}</button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+        }
+
+        // ===== Load and Render Apartment Catalogue =====
+        async function loadApartmentCatalogue() {
+            try {
+                const response = await fetch('bookings.json', { cache: 'no-store' });
+                const data = await response.json();
+                apartmentCatalogue = data.apartments || [];
+                renderApartmentCatalogue(apartmentCatalogue);
+                populateResidenceSelect(apartmentCatalogue, activeExplorerResidenceId);
+            } catch (error) {
+            console.error('Failed to load apartment catalogue:', error);
+        }
+        }
+
+        // Load apartment catalogue on page load
+        document.addEventListener('DOMContentLoaded', loadApartmentCatalogue);
 
         // ===== Load Construction Updates =====
         async function loadConstructionUpdates() {
             try {
-                const response = await fetch('construction.json');
+                const response = await fetch('construction.json', { cache: 'no-store' });
                 const data = await response.json();
                 const updates = data.updates || [];
                 const grid = document.getElementById('constructionGrid');
@@ -2085,21 +3546,25 @@
                 updates.forEach((update, index) => {
                     const card = document.createElement('div');
                     card.className = 'construction-card';
+                    const title = localizeValue(update.title);
+                    const description = localizeValue(update.description);
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
                     // Format date
-                    const date = new Date(update.date);
-                    const formattedDate = date.toLocaleDateString('cs-CZ', {
+                    const [year, month, day] = update.date.split('-').map(Number);
+                    const date = new Date(year, month - 1, day);
+                    const formattedDate = date.toLocaleDateString(currentLang === 'cs' ? 'cs-CZ' : 'en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                     });
 
                     card.innerHTML = `
-                        <img src="${update.image}" alt="${update.title}" class="construction-card__image" onerror="this.style.display='none'">
+                        <img src="${update.image}" alt="${title}" class="construction-card__image" onerror="this.style.display='none'">
                         <div class="construction-card__content">
                             <span class="construction-card__date">${formattedDate}</span>
-                            <h3 class="construction-card__title">${update.title}</h3>
-                            ${update.description ? `<p class="construction-card__description">${update.description}</p>` : ''}
+                            <h3 class="construction-card__title">${title}</h3>
+                            ${description ? `<p class="construction-card__description">${description}</p>` : ''}
                         </div>
                     `;
 
@@ -2113,19 +3578,16 @@
 
                 // If no updates, show a message
                 if (updates.length === 0) {
-                    grid.innerHTML = '<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">Zatím nejsou k dispozici žádné aktualizace.</p>';
+                    grid.innerHTML = `<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">${t('construction_empty')}</p>`;
                 }
             } catch (error) {
                 console.error('Failed to load construction updates:', error);
                 const grid = document.getElementById('constructionGrid');
                 if (grid) {
-                    grid.innerHTML = '<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">Nepodařilo se načíst aktualizace stavby.</p>';
+                    grid.innerHTML = `<p style="text-align: center; opacity: 0.6; grid-column: 1 / -1;">${t('construction_error')}</p>`;
                 }
             }
         }
-
-        // Load construction updates on page load
-        document.addEventListener('DOMContentLoaded', loadConstructionUpdates);
 
         // ===== Smooth Scroll for CTA Button =====
         document.getElementById('cta-view-plans').addEventListener('click', (e) => {
@@ -2202,46 +3664,102 @@
     <div class="pdf-modal" id="pdfModal">
         <div class="pdf-modal__container">
             <button class="pdf-modal__close" id="closeModal">×</button>
-            <iframe class="pdf-modal__iframe" id="pdfViewer" src=""></iframe>
+            <div class="pdf-modal__header">
+                <div>
+                    <h3 class="pdf-modal__title" id="modalTitle">Residence</h3>
+                    <p class="pdf-modal__meta" id="modalMeta"></p>
+                </div>
+                <div class="pdf-modal__actions">
+                    <div class="pdf-modal__tabs">
+                        <button class="pdf-modal__tab active" id="modalPlanTab" data-mode="plan">Plan</button>
+                        <button class="pdf-modal__tab" id="modalVideoTab" data-mode="video">Video</button>
+                    </div>
+                    <a class="pdf-modal__link" id="modalPdfLink" href="#" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                </div>
+            </div>
+            <div class="pdf-modal__viewer">
+                <iframe class="pdf-modal__iframe" id="pdfViewer" src=""></iframe>
+                <video class="pdf-modal__video" id="apartmentVideo" controls playsinline></video>
+            </div>
         </div>
     </div>
 
     <script>
-        // PDF Modal Functionality
+        // Apartment Plan & Video Modal Functionality
         const pdfModal = document.getElementById('pdfModal');
         const pdfViewer = document.getElementById('pdfViewer');
+        const apartmentVideo = document.getElementById('apartmentVideo');
         const closeModal = document.getElementById('closeModal');
-        const viewPlanButtons = document.querySelectorAll('.residence-card__button');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMeta = document.getElementById('modalMeta');
+        const modalPdfLink = document.getElementById('modalPdfLink');
+        const modalTabs = document.querySelectorAll('.pdf-modal__tab');
+        let activeModalApartment = null;
 
-        // PDF file mapping
-        const pdfFiles = {
-            '01': 'assets/images/TOWNHOUSE-01.pdf',
-            '02': 'assets/images/TOWNHOUSE-02.pdf',
-            '03': 'assets/images/TOWNHOUSE-03.pdf',
-            '04': 'assets/images/TOWNHOUSE-04.pdf',
-            '05': 'assets/images/TOWNHOUSE-05.pdf',
-            '06': 'assets/images/TOWNHOUSE-06.pdf'
-        };
+        function setModalMode(mode) {
+            modalTabs.forEach(tab => tab.classList.toggle('active', tab.dataset.mode === mode));
 
-        // Open modal and load PDF
-        viewPlanButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const residence = this.getAttribute('data-residence');
-                const pdfPath = pdfFiles[residence];
-
-                if (pdfPath) {
-                    pdfViewer.src = pdfPath;
-                    pdfModal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent body scroll
+            if (mode === 'video') {
+                pdfViewer.style.display = 'none';
+                apartmentVideo.style.display = 'block';
+                if (activeModalApartment?.video) {
+                    apartmentVideo.src = activeModalApartment.video;
+                    apartmentVideo.play().catch(() => { });
                 }
-            });
+                return;
+            }
+
+            apartmentVideo.pause();
+            apartmentVideo.removeAttribute('src');
+            apartmentVideo.load();
+            apartmentVideo.style.display = 'none';
+            pdfViewer.style.display = 'block';
+            pdfViewer.src = activeModalApartment?.pdf || '';
+        }
+
+        function openApartmentModal(residenceId, mode = 'plan') {
+            activeModalApartment = apartmentCatalogue.find(unit => unit.id === residenceId);
+            if (!activeModalApartment) return;
+
+            modalTitle.textContent = `${activeModalApartment.residence} · ${activeModalApartment.layout}`;
+            modalMeta.textContent = `${activeModalApartment.unit} · ${activeModalApartment.nvArea} · ${activeModalApartment.outdoorType} ${activeModalApartment.outdoorArea}`;
+            modalPdfLink.href = activeModalApartment.pdf;
+            modalPdfLink.textContent = t('btn_open_pdf');
+            document.getElementById('modalPlanTab').textContent = t('modal_plan');
+            document.getElementById('modalVideoTab').textContent = t('modal_video');
+
+            pdfModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setModalMode(mode);
+        }
+
+        document.addEventListener('click', event => {
+            const trigger = event.target.closest('[data-action][data-residence]');
+            if (!trigger) return;
+
+            const action = trigger.dataset.action;
+            const residenceId = trigger.dataset.residence;
+            if (action === 'plan' || action === 'video') {
+                openApartmentModal(residenceId, action);
+            }
+            if (action === 'contact') {
+                selectResidenceForViewing(residenceId);
+            }
+        });
+
+        modalTabs.forEach(tab => {
+            tab.addEventListener('click', () => setModalMode(tab.dataset.mode));
         });
 
         // Close modal function
         function closePDFModal() {
             pdfModal.classList.remove('active');
-            pdfViewer.src = ''; // Clear PDF to stop loading
-            document.body.style.overflow = ''; // Restore body scroll
+            pdfViewer.src = '';
+            apartmentVideo.pause();
+            apartmentVideo.removeAttribute('src');
+            apartmentVideo.load();
+            activeModalApartment = null;
+            document.body.style.overflow = '';
         }
 
         // Close button click
