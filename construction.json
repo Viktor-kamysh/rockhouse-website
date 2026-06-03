@@ -1,3 +1,52 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "date": "2026-03-17",
+      "image": "assets/images/construction/site-aerial-plan.jpg",
+      "title": {
+        "cs": "Situace projektu a orientace domů",
+        "en": "Project context and townhouse orientation"
+      },
+      "description": {
+        "cs": "Přehled staveniště v kontextu ulice Pražského a zeleného okolí Prokopského údolí.",
+        "en": "A site overview showing the project position on Pražského Street and its green Prokop Valley context."
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "image": "assets/images/construction/site-approach-valley.jpg",
+      "title": {
+        "cs": "Příjezd a okolí stavby",
+        "en": "Site approach and surroundings"
+      },
+      "description": {
+        "cs": "Aktuální pohled na příjezd k projektu a bezprostřední rezidenční prostředí v Praze 5.",
+        "en": "A current view of the project approach and the immediate residential setting in Prague 5."
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "image": "assets/images/construction/site-team-visit.jpg",
+      "title": {
+        "cs": "Kontrolní návštěva týmu",
+        "en": "Team site inspection"
+      },
+      "description": {
+        "cs": "Pravidelná kontrola postupu výstavby a koordinace dalších kroků na místě.",
+        "en": "A regular progress inspection and coordination visit on site."
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "image": "assets/images/construction/site-team-concrete.jpg",
+      "title": {
+        "cs": "Práce na konstrukcích",
+        "en": "Structural works in progress"
+      },
+      "description": {
+        "cs": "Dokumentace aktuálních konstrukčních prací a připravenosti dalších etap stavby.",
+        "en": "Documentation of current structural works and preparation for the next construction stages."
+      }
+    }
+  ]
 }
