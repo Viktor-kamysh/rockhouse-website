@@ -4331,7 +4331,7 @@
 
         function closeQuickContact() {
             quickContactModal?.classList.remove('active');
-            if (!pdfModal?.classList.contains('active')) document.body.style.overflow = '';
+            if (!document.getElementById('pdfModal')?.classList.contains('active')) document.body.style.overflow = '';
         }
 
         quickContactToggle?.addEventListener('click', () => openQuickContact());
