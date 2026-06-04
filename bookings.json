@@ -18,7 +18,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-01-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-01-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-01-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T01.04", "name": "Obývací pokoj + KK", "area": "27.6 m²"},
@@ -48,7 +49,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-02-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-02-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-02-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T02.01", "name": "Vstup / Schodiště", "area": "7.4 m²"},
@@ -79,7 +81,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-03-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-03-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-03-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T03.01", "name": "Předsíň / Schodiště", "area": "11.3 m²"},
@@ -112,7 +115,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-04-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-04-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-04-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T04.01", "name": "Předsíň / Schodiště", "area": "8.4 m²"},
@@ -140,7 +144,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-05-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-05-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-05-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T05.04", "name": "Obývací pokoj + KK", "area": "42.1 m²"},
@@ -167,7 +172,8 @@
       "pdf": "assets/floorplans/pdf/townhouse-06-plan.pdf",
       "planPreview": "assets/floorplans/presentation/townhouse-06-plan.jpg",
       "sitePlan": "assets/site-plan-extracts/townhouse-06-plan.png",
-      "video": "video/hero.mp4",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
       "source": "Project documentation D.1.1.101-104",
       "rooms": [
         {"code": "T06.01", "name": "Předsíň / Schodiště", "area": "8.9 m²"},

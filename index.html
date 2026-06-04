@@ -4554,6 +4554,11 @@
             if (mode === 'video' && hasApartmentVideo(activeModalApartment)) {
                 planViewer.style.display = 'none';
                 apartmentVideo.style.display = 'block';
+                if (activeModalApartment.videoPoster) {
+                    apartmentVideo.poster = activeModalApartment.videoPoster;
+                } else {
+                    apartmentVideo.removeAttribute('poster');
+                }
                 apartmentVideo.src = activeModalApartment.video;
                 apartmentVideo.play().catch(() => { });
                 return;
@@ -4561,6 +4566,7 @@
 
             apartmentVideo.pause();
             apartmentVideo.removeAttribute('src');
+            apartmentVideo.removeAttribute('poster');
             apartmentVideo.load();
             apartmentVideo.style.display = 'none';
             planViewer.style.display = 'grid';
@@ -4608,6 +4614,7 @@
             planImage.removeAttribute('src');
             apartmentVideo.pause();
             apartmentVideo.removeAttribute('src');
+            apartmentVideo.removeAttribute('poster');
             apartmentVideo.load();
             activeModalApartment = null;
             document.body.style.overflow = '';
