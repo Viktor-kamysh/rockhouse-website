@@ -1631,6 +1631,7 @@
             letter-spacing: 0.07em;
             line-height: 1.2;
             text-align: center;
+            text-decoration: none;
             text-transform: uppercase;
             transition: var(--transition-smooth);
             cursor: pointer;
@@ -3653,6 +3654,7 @@
                 btn_view_plan: 'View Plan',
                 btn_watch_video: 'Watch Video',
                 btn_open_pdf: 'Open PDF',
+                btn_download_pdf: 'Download PDF',
                 btn_request_viewing_short: 'Request Viewing',
                 explorer_badge: 'Verified plan',
                 explorer_source_prefix: 'Source',
@@ -3796,6 +3798,7 @@
                 btn_view_plan: 'Zobrazit Půdorys',
                 btn_watch_video: 'Přehrát Video',
                 btn_open_pdf: 'Otevřít PDF',
+                btn_download_pdf: 'Stáhnout PDF',
                 btn_request_viewing_short: 'Požádat o prohlídku',
                 explorer_badge: 'Ověřený půdorys',
                 explorer_source_prefix: 'Zdroj',
@@ -4115,6 +4118,7 @@
                                 <button class="residence-card__button residence-card__button--primary" data-action="plan" data-residence="${unit.id}">${t('btn_view_plan')}</button>
                                 <button class="residence-card__button" data-action="contact" data-residence="${unit.id}">${t('btn_request_viewing_short')}</button>
                                 ${hasApartmentVideo(unit) ? `<button class="residence-card__button" data-action="video" data-residence="${unit.id}">${t('btn_watch_video')}</button>` : ''}
+                                ${unit.pdf ? `<a class="residence-card__button" href="${unit.pdf}" download target="_blank" rel="noopener">${t('btn_download_pdf')}</a>` : ''}
                             </div>
                         </div>
                     </article>
