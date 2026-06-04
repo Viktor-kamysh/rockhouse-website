@@ -2418,73 +2418,6 @@
             font-weight: 500;
         }
 
-        .construction-feature {
-            align-items: stretch;
-            background: var(--white);
-            border: 1px solid rgba(37, 36, 33, 0.12);
-            box-shadow: 0 18px 60px rgba(37, 36, 33, 0.08);
-            display: grid;
-            gap: 0;
-            margin: 0 auto 2rem;
-            max-width: 920px;
-            overflow: hidden;
-        }
-
-        .construction-feature__media {
-            background: #eee9df;
-            min-height: 260px;
-        }
-
-        .construction-feature__video {
-            display: block;
-            filter: brightness(1.14) contrast(0.98) saturate(1.06);
-            height: 100%;
-            max-height: 360px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .construction-feature__body {
-            align-items: flex-start;
-            background: rgba(255, 255, 255, 0.88);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: clamp(1.4rem, 3vw, 2.35rem);
-        }
-
-        .construction-feature__eyebrow {
-            color: var(--bronze);
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            margin-bottom: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .construction-feature__title {
-            color: var(--graphite);
-            font-size: clamp(1.45rem, 2.4vw, 2.1rem);
-            line-height: 1.08;
-            margin-bottom: 0.9rem;
-        }
-
-        .construction-feature__text {
-            color: rgba(37, 36, 33, 0.72);
-            font-size: 0.98rem;
-            line-height: 1.65;
-            margin-bottom: 1.2rem;
-            max-width: 520px;
-        }
-
-        .construction-feature__meta {
-            color: rgba(37, 36, 33, 0.52);
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
         .construction-placeholder {
             background: var(--white);
             border: 1px solid rgba(37, 36, 33, 0.12);
@@ -2608,10 +2541,6 @@
         @media (min-width: 768px) {
             .construction__title {
                 font-size: 3rem;
-            }
-
-            .construction-feature {
-                grid-template-columns: minmax(280px, 0.78fr) 1fr;
             }
 
             .construction-grid {
@@ -2988,8 +2917,7 @@
 
             .about__description,
             .location__description,
-            .construction-card__description,
-            .construction-feature__text {
+            .construction-card__description {
                 font-size: 0.95rem;
                 line-height: 1.65;
             }
@@ -3194,14 +3122,6 @@
                 letter-spacing: 0.055em;
                 min-height: 2.25rem;
                 padding: 0.48rem 0.55rem;
-            }
-
-            .construction-feature__media {
-                min-height: 190px;
-            }
-
-            .construction-feature__video {
-                max-height: 260px;
             }
 
             .construction-card__image {
@@ -3536,22 +3456,6 @@
             <h2 class="construction__title" data-i18n="construction_title">Construction Progress</h2>
             <p class="construction__subtitle" data-i18n="construction_subtitle">Current site updates, team visits and verified progress toward summer 2026 final approval</p>
         </div>
-        <div class="construction-feature">
-            <div class="construction-feature__media">
-                <video class="construction-feature__video" controls playsinline
-                    poster="assets/construction-video/optimized/march-2026-site-walk-light-poster.jpg">
-                    <source src="assets/construction-video/optimized/march-2026-site-walk-light.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="construction-feature__body">
-                <span class="construction-feature__eyebrow" data-i18n="construction_feature_eyebrow">March 2026 update</span>
-                <h3 class="construction-feature__title" data-i18n="construction_feature_title">Current site walk-through</h3>
-                <p class="construction-feature__text" data-i18n="construction_feature_text">
-                    A short dated record from the Rock House Prague site, showing the project context and current construction progress.
-                </p>
-                <span class="construction-feature__meta" data-i18n="construction_feature_meta">Video documentation · March 2026</span>
-            </div>
-        </div>
         <div class="construction-grid" id="constructionGrid"></div>
     </section>
 
@@ -3771,10 +3675,6 @@
                 // Construction
                 construction_title: 'Construction Progress',
                 construction_subtitle: 'Current site updates, team visits and verified progress toward summer 2026 final approval',
-                construction_feature_eyebrow: 'March 2026 update',
-                construction_feature_title: 'Current site walk-through',
-                construction_feature_text: 'A short dated record from the Rock House Prague site, showing the project context and current construction progress.',
-                construction_feature_meta: 'Video documentation · March 2026',
                 construction_placeholder_eyebrow: 'Curated updates',
                 construction_placeholder_title: 'Dated construction gallery coming soon',
                 construction_placeholder_text: 'We are preparing a selective construction record with clean visuals, dates and short notes for each update.',
@@ -3918,10 +3818,6 @@
                 // Construction
                 construction_title: 'Průběh stavby',
                 construction_subtitle: 'Aktuální záznam stavby, návštěvy týmu a ověřený postup směrem k předpokládané kolaudaci v létě 2026',
-                construction_feature_eyebrow: 'Aktualizace březen 2026',
-                construction_feature_title: 'Aktuální průchod stavbou',
-                construction_feature_text: 'Krátký datovaný záznam z místa Rock House Prague ukazuje kontext projektu a aktuální průběh výstavby.',
-                construction_feature_meta: 'Video dokumentace · březen 2026',
                 construction_placeholder_eyebrow: 'Připravujeme výběr',
                 construction_placeholder_title: 'Datovaná galerie ze stavby bude doplněna',
                 construction_placeholder_text: 'Připravujeme selektivní záznam stavby s čistými vizuály, daty a krátkým komentářem ke každé aktualizaci.',
