@@ -63,6 +63,7 @@ function buildMessage(data, event) {
 
   return [
     '<b>🏡 Rock House Prague · новая заявка</b>',
+    '<b>Получатель:</b> Viktor',
     '',
     `<b>Имя:</b> ${escapeHtml(data.name)}`,
     `<b>Телефон:</b> <code>${escapeHtml(data.phone)}</code>`,
@@ -84,9 +85,9 @@ function buildMessage(data, event) {
 
 async function sendTelegramMessage(text) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const chatId = process.env.TELEGRAM_CHAT_ID || '6688224061';
 
-  if (!token || !chatId) {
+  if (!token) {
     console.log('[telegram:missing-env]\n' + text);
     return { ok: false, error: 'telegram_env_missing' };
   }

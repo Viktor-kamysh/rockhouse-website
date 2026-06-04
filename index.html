@@ -2533,12 +2533,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.1rem;
         }
 
         .construction-card {
             background-color: var(--white);
             border: 1px solid rgba(37, 36, 33, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             overflow: hidden;
             transition: all 0.4s ease;
             opacity: 0;
@@ -2558,7 +2561,8 @@
 
         .construction-card__image {
             width: 100%;
-            height: 240px;
+            aspect-ratio: 4 / 3;
+            height: auto;
             object-fit: cover;
             display: block;
             transition: transform 0.4s ease;
@@ -2569,6 +2573,9 @@
         }
 
         .construction-card__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
             padding: 1.15rem;
         }
 
@@ -2593,6 +2600,7 @@
         .construction-card__description {
             font-size: 0.88rem;
             line-height: 1.5;
+            margin-top: auto;
             opacity: 0.8;
             color: var(--graphite);
         }
@@ -2609,27 +2617,11 @@
             .construction-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .construction-card:first-child {
-                grid-column: span 2;
-            }
-
-            .construction-card:first-child .construction-card__image {
-                height: 360px;
-            }
         }
 
         @media (min-width: 1024px) {
             .construction-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .construction-card:first-child {
-                grid-row: span 2;
-            }
-
-            .construction-card:first-child .construction-card__image {
-                height: 430px;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
             }
         }
 
@@ -2640,12 +2632,12 @@
         }
 
         .location__container {
-            max-width: 1400px;
+            max-width: 1240px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: center;
+            gap: 3rem;
+            align-items: start;
         }
 
         .location__content {
@@ -2660,14 +2652,14 @@
         }
 
         .location__title {
-            margin-bottom: 2rem;
+            margin-bottom: 1.35rem;
             color: var(--graphite);
         }
 
         .location__description {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
+            font-size: 1.02rem;
+            line-height: 1.72;
+            margin-bottom: 2rem;
             color: var(--graphite);
         }
 
@@ -2720,6 +2712,7 @@
             position: relative;
             overflow: hidden;
             border: 1px solid var(--light-gray);
+            aspect-ratio: 4 / 3;
             transition: var(--transition-smooth);
         }
 
@@ -2730,7 +2723,7 @@
 
         .location__map-image {
             width: 100%;
-            height: 500px;
+            height: 100%;
             object-fit: cover;
             object-position: center;
             filter: grayscale(100%) contrast(90%);
@@ -2874,8 +2867,8 @@
             }
 
             .location__container {
-                grid-template-columns: 1fr 1fr;
-                gap: 6rem;
+                grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+                gap: 3.5rem;
             }
         }
 
@@ -3211,17 +3204,20 @@
                 max-height: 260px;
             }
 
-            .construction-card__image,
-            .location__map-image {
-                height: 280px;
+            .construction-card__image {
+                aspect-ratio: 16 / 11;
             }
 
             .construction-card__content {
-                padding: 1.15rem;
+                padding: 1rem;
             }
 
             .construction-card__title {
-                font-size: 1.25rem;
+                font-size: 1.12rem;
+            }
+
+            .location__map-link {
+                aspect-ratio: 1 / 1;
             }
 
             .location__distance-item {
@@ -4397,6 +4393,7 @@
         async function submitContactForm(form, messageEl) {
             const currentLang = localStorage.getItem('preferredLanguage') || 'cs';
             const formData = new FormData(form);
+            formData.append("form-name", "contact");
             const residenceSelect = form.querySelector('[name="residence"]');
             const selectedResidence = residenceSelect?.selectedOptions?.[0]?.textContent?.trim() || '';
             const payload = {
@@ -4416,11 +4413,19 @@
             };
 
             try {
-                const response = await fetch('/.netlify/functions/telegram-lead', {
+                let response = await fetch('/.netlify/functions/telegram-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
+
+                if (!response.ok) {
+                    response = await fetch('/', {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString()
+                    });
+                }
 
                 if (response.ok) {
                     messageEl.textContent = translations[currentLang].form_success;
