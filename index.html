@@ -2068,6 +2068,16 @@
             position: relative;
         }
 
+        .form__honeypot {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+
         .form__input,
         .form__select,
         .form__textarea {
@@ -3557,6 +3567,8 @@
                 information</p>
 
             <form class="form" id="lead-form" method="POST">
+                <input type="hidden" name="source" value="footer-contact" />
+                <input type="text" class="form__honeypot" name="bot-field" tabindex="-1" autocomplete="off">
                 <div class="form__group">
                     <input type="text" class="form__input" id="form-name" name="name" placeholder="Your Name" required>
                 </div>
@@ -3622,6 +3634,7 @@
             <div class="quick-contact__form-wrap">
                 <form class="form" id="quick-contact-form" method="POST">
                     <input type="hidden" name="source" value="quick-contact" />
+                    <input type="text" class="form__honeypot" name="bot-field" tabindex="-1" autocomplete="off">
                     <div class="form__group">
                         <input type="text" class="form__input" id="quick-form-name" name="name" placeholder="Vaše jméno" required>
                     </div>
@@ -3656,6 +3669,7 @@
         <input type="text" name="preferred_time" />
         <textarea name="message"></textarea>
         <input type="hidden" name="source" value="" />
+        <input type="text" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
     </form>
 
@@ -4382,15 +4396,30 @@
 
         async function submitContactForm(form, messageEl) {
             const currentLang = localStorage.getItem('preferredLanguage') || 'cs';
-
             const formData = new FormData(form);
-            formData.append("form-name", "contact");
+            const residenceSelect = form.querySelector('[name="residence"]');
+            const selectedResidence = residenceSelect?.selectedOptions?.[0]?.textContent?.trim() || '';
+            const payload = {
+                name: String(formData.get('name') || ''),
+                email: String(formData.get('email') || ''),
+                phone: String(formData.get('phone') || ''),
+                residence: String(formData.get('residence') || ''),
+                residenceLabel: selectedResidence,
+                preferredTime: String(formData.get('preferred_time') || ''),
+                message: String(formData.get('message') || ''),
+                source: String(formData.get('source') || 'contact-form'),
+                honeypot: String(formData.get('bot-field') || ''),
+                locale: currentLang,
+                page: window.location.href,
+                referrer: document.referrer,
+                submittedAt: new Date().toISOString()
+            };
 
             try {
-                const response = await fetch('/', {
+                const response = await fetch('/.netlify/functions/telegram-lead', {
                     method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
 
                 if (response.ok) {
