@@ -4,12 +4,12 @@
       "date": "2026-03-17",
       "image": "assets/images/construction/site-aerial-plan.jpg",
       "title": {
-        "cs": "Situace projektu a orientace domů",
-        "en": "Project context and townhouse orientation"
+        "cs": "Celkový pohled na stavbu",
+        "en": "Overall site view"
       },
       "description": {
-        "cs": "Přehled staveniště v kontextu ulice Pražského a zeleného okolí Prokopského údolí.",
-        "en": "A site overview showing the project position on Pražského Street and its green Prokop Valley context."
+        "cs": "Širší záběr staveniště a rozložení domů v kontextu pozemku.",
+        "en": "A broader view of the construction site and townhouse layout."
       }
     },
     {
@@ -26,26 +26,38 @@
     },
     {
       "date": "2026-03-17",
-      "image": "assets/images/construction/site-team-visit.jpg",
+      "image": "assets/images/construction/march-6.jpg",
       "title": {
-        "cs": "Kontrolní návštěva týmu",
-        "en": "Team site inspection"
+        "cs": "Exteriér townhouse",
+        "en": "Townhouse exterior"
       },
       "description": {
-        "cs": "Pravidelná kontrola postupu výstavby a koordinace dalších kroků na místě.",
-        "en": "A regular progress inspection and coordination visit on site."
+        "cs": "Aktuální stav objemu domu, fasády a návaznosti na terén.",
+        "en": "Current progress on the townhouse volume, facade and terrain levels."
       }
     },
     {
       "date": "2026-03-17",
-      "image": "assets/images/construction/site-team-concrete.jpg",
+      "image": "assets/images/construction/march-9.jpg",
       "title": {
-        "cs": "Práce na konstrukcích",
-        "en": "Structural works in progress"
+        "cs": "Interiér a příprava rozvodů",
+        "en": "Interior and service preparation"
       },
       "description": {
-        "cs": "Dokumentace aktuálních konstrukčních prací a připravenosti dalších etap stavby.",
-        "en": "Documentation of current structural works and preparation for the next construction stages."
+        "cs": "Světlý vnitřní prostor s dokončenými hrubými rozvody.",
+        "en": "A bright interior space with rough services prepared."
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "image": "assets/images/construction/site-team-visit.jpg",
+      "title": {
+        "cs": "Kontrola postupu",
+        "en": "Progress inspection"
+      },
+      "description": {
+        "cs": "Pravidelná kontrola detailů a koordinace dalších kroků přímo na místě.",
+        "en": "A regular on-site review of details and next construction steps."
       }
     }
   ]
