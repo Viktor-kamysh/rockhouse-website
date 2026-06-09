@@ -2518,16 +2518,6 @@
             padding: 1.15rem;
         }
 
-        .construction-card__date {
-            display: block;
-            font-size: 0.875rem;
-            color: var(--olive);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 0.65rem;
-        }
-
         .construction-card__title {
             font-size: 1.12rem;
             font-weight: 700;
@@ -3683,8 +3673,8 @@
                 construction_title: 'Construction Progress',
                 construction_subtitle: 'Current site updates, team visits and verified progress toward summer 2026 final approval',
                 construction_placeholder_eyebrow: 'Curated updates',
-                construction_placeholder_title: 'Dated construction gallery coming soon',
-                construction_placeholder_text: 'We are preparing a selective construction record with clean visuals, dates and short notes for each update.',
+                construction_placeholder_title: 'Construction gallery coming soon',
+                construction_placeholder_text: 'We are preparing a selective construction record with clean visuals and short notes for each update.',
                 construction_placeholder_meta: 'Photos and videos will be added after editorial selection',
                 construction_empty: 'No construction updates are available yet.',
                 construction_error: 'Construction updates could not be loaded.',
@@ -3827,8 +3817,8 @@
                 construction_title: 'Průběh stavby',
                 construction_subtitle: 'Aktuální záznam stavby, návštěvy týmu a ověřený postup směrem k předpokládané kolaudaci v létě 2026',
                 construction_placeholder_eyebrow: 'Připravujeme výběr',
-                construction_placeholder_title: 'Datovaná galerie ze stavby bude doplněna',
-                construction_placeholder_text: 'Připravujeme selektivní záznam stavby s čistými vizuály, daty a krátkým komentářem ke každé aktualizaci.',
+                construction_placeholder_title: 'Galerie ze stavby bude doplněna',
+                construction_placeholder_text: 'Připravujeme selektivní záznam stavby s čistými vizuály a krátkým komentářem ke každé aktualizaci.',
                 construction_placeholder_meta: 'Fotografie a videa budou přidány po kurátorském výběru',
                 construction_empty: 'Zatím nejsou k dispozici žádné aktualizace.',
                 construction_error: 'Nepodařilo se načíst aktualizace stavby.',
@@ -4161,30 +4151,16 @@
                 // Clear existing content
                 grid.innerHTML = '';
 
-                // Sort updates by date (newest first)
-                updates.sort((a, b) => new Date(b.date) - new Date(a.date));
-
                 // Generate cards for each update
                 updates.forEach((update, index) => {
                     const card = document.createElement('div');
                     card.className = 'construction-card';
                     const title = localizeValue(update.title);
                     const description = localizeValue(update.description);
-                    const currentLang = localStorage.getItem('preferredLanguage') || 'cs';
-
-                    // Format date
-                    const [year, month, day] = update.date.split('-').map(Number);
-                    const date = new Date(year, month - 1, day);
-                    const formattedDate = date.toLocaleDateString(currentLang === 'cs' ? 'cs-CZ' : 'en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
 
                     card.innerHTML = `
                         <img src="${update.image}" alt="${title}" class="construction-card__image" onerror="this.style.display='none'">
                         <div class="construction-card__content">
-                            <span class="construction-card__date">${formattedDate}</span>
                             <h3 class="construction-card__title">${title}</h3>
                             ${description ? `<p class="construction-card__description">${description}</p>` : ''}
                         </div>
