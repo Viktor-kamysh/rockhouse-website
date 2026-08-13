@@ -3628,14 +3628,14 @@
                 table_room_total: 'Room table total',
                 table_outdoor: 'Outdoor',
                 table_total: 'Unit + outdoor',
-                table_price: 'Price (excl. VAT)',
+                table_price: 'Price incl. VAT, excl. parking',
                 table_status: 'Status',
                 status_available: 'Available for purchase',
                 status_reserved: 'Reserved',
                 status_sold: 'Sold',
                 status_info: 'Available for purchase',
                 btn_inquire: 'Inquire',
-                pricing_footer: 'Area values are shown according to NV 366/2013. Detailed room schedules and source documentation are available in the floor-plan PDF.',
+                pricing_footer: 'Unit areas are shown according to the owner declaration and NV 366/2013. Prices are listed incl. VAT and without parking spaces.',
 
                 // Availability
                 availability_title: '',
@@ -3661,8 +3661,9 @@
                 card_interior: 'Interior',
                 card_outdoor: 'Outdoor',
                 card_total: 'Unit + outdoor',
-                card_price: 'Price',
+                card_price: 'Price incl. VAT, excl. parking',
                 price_on_request: 'Price on request',
+                price_reserved_hidden: 'Not published',
                 card_status: 'Status',
                 card_source: 'Source',
                 card_rooms: 'Room schedule',
@@ -3772,14 +3773,14 @@
                 table_room_total: 'Součet místností',
                 table_outdoor: 'Exteriér',
                 table_total: 'Jednotka + exteriér',
-                table_price: 'Cena (bez DPH)',
+                table_price: 'Cena vč. DPH, bez parkovacího stání',
                 table_status: 'Stav',
                 status_available: 'Dostupné ke koupi',
                 status_reserved: 'Rezervováno',
                 status_sold: 'Prodáno',
                 status_info: 'Dostupné ke koupi',
                 btn_inquire: 'Informovat se',
-                pricing_footer: 'Plochy jsou uvedeny dle NV 366/2013. Detailní tabulka místností a zdrojová dokumentace jsou k dispozici v PDF půdorysu.',
+                pricing_footer: 'Plochy jednotek jsou uvedeny dle prohlášení vlastníka a NV 366/2013. Ceny jsou uvedeny včetně DPH a bez parkovacích stání.',
 
                 // Availability
                 availability_title: '',
@@ -3805,8 +3806,9 @@
                 card_interior: 'Interiér',
                 card_outdoor: 'Exteriér',
                 card_total: 'Jednotka + exteriér',
-                card_price: 'Cena',
+                card_price: 'Cena vč. DPH, bez parkingu',
                 price_on_request: 'Cena na vyžádání',
+                price_reserved_hidden: 'Nezveřejněno',
                 card_status: 'Stav',
                 card_source: 'Zdroj',
                 card_rooms: 'Tabulka místností',
@@ -4009,7 +4011,8 @@
             return 'status_info';
         }
 
-        function getPriceLabel(price) {
+        function getPriceLabel(price, status) {
+            if ((status || '').toLowerCase() === 'reserved') return t('price_reserved_hidden');
             return price && String(price).trim() ? price : t('price_on_request');
         }
 
@@ -4075,7 +4078,7 @@
                             <div class="residence-card__commercial">
                                 <div>
                                     <span class="residence-card__commercial-label">${t('card_price')}</span>
-                                    <span class="residence-card__price">${getPriceLabel(unit.price)}</span>
+                                    <span class="residence-card__price">${getPriceLabel(unit.price, unit.status)}</span>
                                 </div>
                                 <div>
                                     <span class="residence-card__commercial-label">${t('card_status')}</span>
@@ -4411,7 +4414,7 @@
                 [t('card_nv_area'), unit.nvArea],
                 [t('card_outdoor'), `${unit.outdoorType} ${unit.outdoorArea}`],
                 [t('card_total'), unit.totalArea],
-                [t('card_price'), getPriceLabel(unit.price)],
+                [t('card_price'), getPriceLabel(unit.price, unit.status)],
                 [t('card_status'), getStatusLabel(unit.status)]
             ].map(([label, value]) => `
                 <div>
