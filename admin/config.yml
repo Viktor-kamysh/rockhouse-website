@@ -26,7 +26,6 @@ collections:
               - {label: "Layout", name: "layout", widget: "string"}
               - {label: "Levels", name: "levels", widget: "string"}
               - {label: "Plocha dle NV 366/2013 / Area according to NV 366/2013", name: "nvArea", widget: "string"}
-              - {label: "Součet místností / Room table total", name: "roomTableTotal", widget: "string"}
               - {label: "Outdoor Area", name: "outdoorArea", widget: "string"}
               - {label: "Outdoor Type", name: "outdoorType", widget: "string", required: false}
               - {label: "Total Area", name: "totalArea", widget: "string", required: false}
