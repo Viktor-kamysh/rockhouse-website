@@ -3634,7 +3634,7 @@
                 status_sold: 'Sold',
                 status_info: 'Available for purchase',
                 btn_inquire: 'Inquire',
-                pricing_footer: 'Unit areas are shown according to the owner declaration and final approval documentation. Prices are listed incl. VAT and without parking spaces.',
+                pricing_footer: 'Unit areas are shown according to the owner declaration and final approval documentation.',
 
                 // Availability
                 availability_title: '',
@@ -3777,7 +3777,7 @@
                 status_sold: 'Prodáno',
                 status_info: 'Dostupné ke koupi',
                 btn_inquire: 'Informovat se',
-                pricing_footer: 'Plochy jednotek jsou uvedeny dle prohlášení vlastníka a podkladů pro kolaudaci. Ceny jsou uvedeny včetně DPH a bez parkovacích stání.',
+                pricing_footer: 'Plochy jednotek jsou uvedeny dle prohlášení vlastníka a podkladů pro kolaudaci.',
 
                 // Availability
                 availability_title: '',
@@ -4072,10 +4072,6 @@
                                 </div>
                             </div>
                             <div class="residence-card__commercial">
-                                <div>
-                                    <span class="residence-card__commercial-label">${t('card_price')}</span>
-                                    <span class="residence-card__price">${getPriceLabel(unit.price, unit.status)}</span>
-                                </div>
                                 <div>
                                     <span class="residence-card__commercial-label">${t('card_status')}</span>
                                     <span class="residence-card__status${getStatusModifier(unit.status)}">${getStatusLabel(unit.status)}</span>
@@ -4406,7 +4402,6 @@
                 [t('card_nv_area'), unit.nvArea],
                 [t('card_outdoor'), `${unit.outdoorType} ${unit.outdoorArea}`],
                 [t('card_total'), unit.totalArea],
-                [t('card_price'), getPriceLabel(unit.price, unit.status)],
                 [t('card_status'), getStatusLabel(unit.status)]
             ].map(([label, value]) => `
                 <div>
