@@ -1,180 +1,332 @@
 {
   "apartments": [
     {
-      "id": "01",
       "unit": "Townhouse 01",
       "residence": "Townhouse 01",
-      "officialUnit": "BYT.1",
-      "building": "SO1",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "62.0 m²",
       "layout": "3+kk",
       "levels": "úroveň -3.000 + úroveň +0.000",
-      "nvArea": "100.0 m²",
-      "outdoorArea": "62.0 m²",
-      "outdoorType": "Terasa",
-      "totalArea": "162.0 m²",
-      "price": "",
-      "status": "available",
-      "pdf": "assets/floorplans/pdf/townhouse-01-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-01-plan.jpg",
+      "officialUnit": "BYT.1",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "162.0 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-01-plan.pdf",
+      "status": "available",
+      "building": "SO1",
+      "nvArea": "100.0 m²",
+      "outdoorType": "Terasa",
       "rooms": [
-        {"code": "T01.01", "name": "Předsíň", "area": "12.0 m²"},
-        {"code": "T01.02", "name": "Pokoj", "area": "19.5 m²"},
-        {"code": "T01.03", "name": "Koupelna + WC", "area": "6.2 m²"},
-        {"code": "T01.04", "name": "WC", "area": "4.7 m²"},
-        {"code": "T01.05", "name": "Pokoj + Kuchyň", "area": "31.6 m²"},
-        {"code": "T01.06", "name": "Pokoj", "area": "16.7 m²"},
-        {"code": "T01.07", "name": "Koupelna + WC", "area": "4.8 m²"}
-      ]
+        {
+          "code": "T01.01",
+          "name": "Předsíň",
+          "area": "12.0 m²"
+        },
+        {
+          "code": "T01.02",
+          "name": "Pokoj",
+          "area": "19.5 m²"
+        },
+        {
+          "code": "T01.03",
+          "name": "Koupelna + WC",
+          "area": "6.2 m²"
+        },
+        {
+          "code": "T01.04",
+          "name": "WC",
+          "area": "4.7 m²"
+        },
+        {
+          "code": "T01.05",
+          "name": "Pokoj + Kuchyň",
+          "area": "31.6 m²"
+        },
+        {
+          "code": "T01.06",
+          "name": "Pokoj",
+          "area": "16.7 m²"
+        },
+        {
+          "code": "T01.07",
+          "name": "Koupelna + WC",
+          "area": "4.8 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "01",
+      "planPreview": "assets/floorplans/presentation/townhouse-01-plan.jpg"
     },
     {
-      "id": "02",
       "unit": "Townhouse 02",
       "residence": "Townhouse 02",
-      "officialUnit": "BYT.2",
-      "building": "SO1",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "10.4 m²",
       "layout": "3+kk",
       "levels": "úroveň +0.000 + úroveň +3.000",
-      "nvArea": "129.0 m²",
-      "outdoorArea": "10.4 m²",
-      "outdoorType": "Střešní terasa",
-      "totalArea": "139.4 m²",
-      "price": "",
-      "status": "available",
-      "pdf": "assets/floorplans/pdf/townhouse-02-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-02-plan.jpg",
+      "officialUnit": "BYT.2",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "139.4 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-02-plan.pdf",
+      "status": "reserved",
+      "building": "SO1",
+      "nvArea": "129.0 m²",
+      "outdoorType": "Střešní terasa",
       "rooms": [
-        {"code": "T02.01", "name": "Předsíň", "area": "7.8 m²"},
-        {"code": "T02.02", "name": "Koupelna + WC", "area": "7.3 m²"},
-        {"code": "T02.03", "name": "Pokoj + Kuchyň", "area": "47.7 m²"},
-        {"code": "T02.04", "name": "Chodba", "area": "2.9 m²"},
-        {"code": "T02.05", "name": "Koupelna + WC", "area": "6.4 m²"},
-        {"code": "T02.06", "name": "Pokoj", "area": "26.6 m²"},
-        {"code": "T02.07", "name": "Pokoj", "area": "24.5 m²"}
-      ]
+        {
+          "code": "T02.01",
+          "name": "Předsíň",
+          "area": "7.8 m²"
+        },
+        {
+          "code": "T02.02",
+          "name": "Koupelna + WC",
+          "area": "7.3 m²"
+        },
+        {
+          "code": "T02.03",
+          "name": "Pokoj + Kuchyň",
+          "area": "47.7 m²"
+        },
+        {
+          "code": "T02.04",
+          "name": "Chodba",
+          "area": "2.9 m²"
+        },
+        {
+          "code": "T02.05",
+          "name": "Koupelna + WC",
+          "area": "6.4 m²"
+        },
+        {
+          "code": "T02.06",
+          "name": "Pokoj",
+          "area": "26.6 m²"
+        },
+        {
+          "code": "T02.07",
+          "name": "Pokoj",
+          "area": "24.5 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "02",
+      "planPreview": "assets/floorplans/presentation/townhouse-02-plan.jpg"
     },
     {
-      "id": "03",
       "unit": "Townhouse 03",
       "residence": "Townhouse 03",
-      "officialUnit": "BYT.3",
-      "building": "SO1",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "43.0 m²",
       "layout": "4+kk",
       "levels": "úroveň -3.000 + úroveň +0.000",
-      "nvArea": "118.5 m²",
-      "outdoorArea": "43.0 m²",
-      "outdoorType": "Zahrada",
-      "totalArea": "161.5 m²",
-      "price": "",
-      "status": "reserved",
-      "pdf": "assets/floorplans/pdf/townhouse-03-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-03-plan.jpg",
+      "officialUnit": "BYT.3",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "161.5 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-03-plan.pdf",
+      "status": "available",
+      "building": "SO1",
+      "nvArea": "118.5 m²",
+      "outdoorType": "Zahrada",
       "rooms": [
-        {"code": "T03.01", "name": "Předsíň", "area": "12.0 m²"},
-        {"code": "T03.02", "name": "Pokoj", "area": "16.4 m²"},
-        {"code": "T03.03", "name": "Šatna", "area": "4.1 m²"},
-        {"code": "T03.04", "name": "Koupelna + WC", "area": "3.9 m²"},
-        {"code": "T03.05", "name": "Pokoj", "area": "17.2 m²"},
-        {"code": "T03.06", "name": "Šatna", "area": "4.1 m²"},
-        {"code": "T03.07", "name": "Koupelna + WC", "area": "4.1 m²"},
-        {"code": "T03.08", "name": "Pokoj + Kuchyň", "area": "34.5 m²"},
-        {"code": "T03.09", "name": "Pokoj", "area": "11.2 m²"},
-        {"code": "T03.10", "name": "Koupelna + WC", "area": "4.6 m²"}
-      ]
+        {
+          "code": "T03.01",
+          "name": "Předsíň",
+          "area": "12.0 m²"
+        },
+        {
+          "code": "T03.02",
+          "name": "Pokoj",
+          "area": "16.4 m²"
+        },
+        {
+          "code": "T03.03",
+          "name": "Šatna",
+          "area": "4.1 m²"
+        },
+        {
+          "code": "T03.04",
+          "name": "Koupelna + WC",
+          "area": "3.9 m²"
+        },
+        {
+          "code": "T03.05",
+          "name": "Pokoj",
+          "area": "17.2 m²"
+        },
+        {
+          "code": "T03.06",
+          "name": "Šatna",
+          "area": "4.1 m²"
+        },
+        {
+          "code": "T03.07",
+          "name": "Koupelna + WC",
+          "area": "4.1 m²"
+        },
+        {
+          "code": "T03.08",
+          "name": "Pokoj + Kuchyň",
+          "area": "34.5 m²"
+        },
+        {
+          "code": "T03.09",
+          "name": "Pokoj",
+          "area": "11.2 m²"
+        },
+        {
+          "code": "T03.10",
+          "name": "Koupelna + WC",
+          "area": "4.6 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "03",
+      "planPreview": "assets/floorplans/presentation/townhouse-03-plan.jpg"
     },
     {
-      "id": "04",
       "unit": "Townhouse 04",
       "residence": "Townhouse 04",
-      "officialUnit": "BYT.4",
-      "building": "SO2",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "45.5 m²",
       "layout": "2+kk",
       "levels": "úroveň -3.000 + úroveň +0.000",
-      "nvArea": "82.8 m²",
-      "outdoorArea": "45.5 m²",
-      "outdoorType": "Střešní terasa",
-      "totalArea": "128.3 m²",
-      "price": "",
-      "status": "available",
-      "pdf": "assets/floorplans/pdf/townhouse-04-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-04-plan.jpg",
+      "officialUnit": "BYT.4",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "128.3 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-04-plan.pdf",
+      "status": "available",
+      "building": "SO2",
+      "nvArea": "82.8 m²",
+      "outdoorType": "Střešní terasa",
       "rooms": [
-        {"code": "T04.01", "name": "Předsíň", "area": "9.2 m²"},
-        {"code": "T04.02", "name": "Koupelna + WC", "area": "7.3 m²"},
-        {"code": "T04.03", "name": "Chodba", "area": "11.8 m²"},
-        {"code": "T04.04", "name": "Pokoj", "area": "15.2 m²"},
-        {"code": "T04.05", "name": "Pokoj + Kuchyň", "area": "36.1 m²"}
-      ]
+        {
+          "code": "T04.01",
+          "name": "Předsíň",
+          "area": "9.2 m²"
+        },
+        {
+          "code": "T04.02",
+          "name": "Koupelna + WC",
+          "area": "7.3 m²"
+        },
+        {
+          "code": "T04.03",
+          "name": "Chodba",
+          "area": "11.8 m²"
+        },
+        {
+          "code": "T04.04",
+          "name": "Pokoj",
+          "area": "15.2 m²"
+        },
+        {
+          "code": "T04.05",
+          "name": "Pokoj + Kuchyň",
+          "area": "36.1 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "04",
+      "planPreview": "assets/floorplans/presentation/townhouse-04-plan.jpg"
     },
     {
-      "id": "05",
       "unit": "Townhouse 05",
       "residence": "Townhouse 05",
-      "officialUnit": "BYT.5",
-      "building": "SO2",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "108.4 m²",
       "layout": "2+kk",
       "levels": "úroveň -6.000 + úroveň -3.000",
-      "nvArea": "85.8 m²",
-      "outdoorArea": "108.4 m²",
-      "outdoorType": "Zahrada",
-      "totalArea": "194.2 m²",
-      "price": "",
-      "status": "available",
-      "pdf": "assets/floorplans/pdf/townhouse-05-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-05-plan.jpg",
+      "officialUnit": "BYT.5",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "194.2 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-05-plan.pdf",
+      "status": "available",
+      "building": "SO2",
+      "nvArea": "85.8 m²",
+      "outdoorType": "Zahrada",
       "rooms": [
-        {"code": "T05.01", "name": "Předsíň", "area": "13.0 m²"},
-        {"code": "T05.02", "name": "Koupelna + WC", "area": "6.3 m²"},
-        {"code": "T05.03", "name": "Pokoj", "area": "17.3 m²"},
-        {"code": "T05.04", "name": "Pokoj + Kuchyň", "area": "42.4 m²"},
-        {"code": "T05.05", "name": "Spíž", "area": "2.7 m²"}
-      ]
+        {
+          "code": "T05.01",
+          "name": "Předsíň",
+          "area": "13.0 m²"
+        },
+        {
+          "code": "T05.02",
+          "name": "Koupelna + WC",
+          "area": "6.3 m²"
+        },
+        {
+          "code": "T05.03",
+          "name": "Pokoj",
+          "area": "17.3 m²"
+        },
+        {
+          "code": "T05.04",
+          "name": "Pokoj + Kuchyň",
+          "area": "42.4 m²"
+        },
+        {
+          "code": "T05.05",
+          "name": "Spíž",
+          "area": "2.7 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "05",
+      "planPreview": "assets/floorplans/presentation/townhouse-05-plan.jpg"
     },
     {
-      "id": "06",
       "unit": "Townhouse 06",
       "residence": "Townhouse 06",
-      "officialUnit": "BYT.6",
-      "building": "SO2",
+      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
+      "price": "",
+      "outdoorArea": "49.3 m²",
       "layout": "2+kk",
       "levels": "úroveň -3.000 + úroveň +0.000",
-      "nvArea": "84.9 m²",
-      "outdoorArea": "49.3 m²",
-      "outdoorType": "Zahrada",
-      "totalArea": "134.2 m²",
-      "price": "",
-      "status": "available",
-      "pdf": "assets/floorplans/pdf/townhouse-06-plan.pdf",
-      "planPreview": "assets/floorplans/presentation/townhouse-06-plan.jpg",
+      "officialUnit": "BYT.6",
       "sitePlan": "",
-      "video": "assets/videos/rock-house-tour-from-41s.mp4",
-      "videoPoster": "assets/videos/rock-house-tour-poster.jpg",
-      "source": "Prohlášení vlastníka",
+      "totalArea": "134.2 m²",
+      "pdf": "assets/floorplans/pdf/townhouse-06-plan.pdf",
+      "status": "available",
+      "building": "SO2",
+      "nvArea": "84.9 m²",
+      "outdoorType": "Zahrada",
       "rooms": [
-        {"code": "T06.01", "name": "Předsíň", "area": "8.9 m²"},
-        {"code": "T06.02", "name": "Pokoj", "area": "14.6 m²"},
-        {"code": "T06.03", "name": "Koupelna + WC", "area": "10.7 m²"},
-        {"code": "T06.04", "name": "Pokoj + Kuchyň", "area": "47.8 m²"}
-      ]
+        {
+          "code": "T06.01",
+          "name": "Předsíň",
+          "area": "8.9 m²"
+        },
+        {
+          "code": "T06.02",
+          "name": "Pokoj",
+          "area": "14.6 m²"
+        },
+        {
+          "code": "T06.03",
+          "name": "Koupelna + WC",
+          "area": "10.7 m²"
+        },
+        {
+          "code": "T06.04",
+          "name": "Pokoj + Kuchyň",
+          "area": "47.8 m²"
+        }
+      ],
+      "source": "Prohlášení vlastníka",
+      "video": "assets/videos/rock-house-tour-from-41s.mp4",
+      "id": "06",
+      "planPreview": "assets/floorplans/presentation/townhouse-06-plan.jpg"
     }
   ]
 }
