@@ -1358,6 +1358,17 @@
             content: none;
         }
 
+        .residence-card--full-plan .residence-card__media {
+            aspect-ratio: 1 / 1;
+            background: #fff;
+        }
+
+        .residence-card--full-plan .residence-card__media img {
+            object-fit: contain;
+            object-position: center;
+            padding: 0.75rem;
+        }
+
         .residence-card__play {
             display: none;
         }
@@ -2022,6 +2033,59 @@
 
             .pdf-modal__image-wrap {
                 min-height: 300px;
+            }
+        }
+
+        .pdf-modal--full-plan .pdf-modal__container {
+            width: min(1180px, 94vw);
+            height: 92svh;
+            grid-template-rows: auto minmax(0, 1fr);
+        }
+
+        .pdf-modal--full-plan .pdf-modal__plan {
+            grid-template-rows: minmax(0, 1fr);
+            overflow: hidden;
+        }
+
+        .pdf-modal--full-plan .pdf-modal__image-wrap {
+            min-height: 0;
+        }
+
+        .pdf-modal--full-plan .pdf-modal__image {
+            height: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .pdf-modal--full-plan .pdf-modal__details {
+            min-height: 0;
+            overflow: auto;
+        }
+
+        @media (max-width: 900px) {
+            .pdf-modal--full-plan .pdf-modal__container {
+                width: 100%;
+                height: 100svh;
+            }
+
+            .pdf-modal--full-plan .pdf-modal__viewer {
+                overflow: auto;
+            }
+
+            .pdf-modal--full-plan .pdf-modal__plan {
+                height: auto;
+                min-height: 0;
+                grid-template-rows: auto auto;
+                overflow: visible;
+            }
+
+            .pdf-modal--full-plan .pdf-modal__image-wrap {
+                aspect-ratio: 1;
+                max-height: 60svh;
+            }
+
+            .pdf-modal--full-plan .pdf-modal__details {
+                overflow: visible;
             }
         }
 
@@ -3042,6 +3106,24 @@
                 padding: 0;
             }
 
+            .residence-card--full-plan {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .residence-card--full-plan .residence-card__media {
+                aspect-ratio: 4 / 3;
+                height: auto;
+                min-height: 0;
+            }
+
+            .residence-card--full-plan .residence-card__facts {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .residence-card--full-plan .residence-card__actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .residence-card__body {
                 gap: 0.65rem;
                 padding: 0.9rem;
@@ -4060,7 +4142,7 @@
 
             residenceGrid.innerHTML = units.map(unit => {
                 return `
-                    <article class="residence-card">
+                    <article class="residence-card${unit.planDisplay === 'full' ? ' residence-card--full-plan' : ''}">
                         <button class="residence-card__media" data-action="plan" data-residence="${unit.id}" aria-label="${t('btn_view_plan')} ${unit.residence}">
                             <img src="${getPlanImage(unit)}" alt="${unit.residence} verified floor plan">
                         </button>
@@ -4447,6 +4529,8 @@
         function openApartmentModal(residenceId, mode = 'plan') {
             activeModalApartment = apartmentCatalogue.find(unit => unit.id === residenceId);
             if (!activeModalApartment) return;
+
+            pdfModal.classList.toggle('pdf-modal--full-plan', activeModalApartment.planDisplay === 'full');
 
             modalTitle.textContent = `${activeModalApartment.residence} · ${activeModalApartment.layout}`;
             modalMeta.textContent = `${activeModalApartment.unit} · ${activeModalApartment.nvArea} · ${activeModalApartment.outdoorType} ${activeModalApartment.outdoorArea}`;

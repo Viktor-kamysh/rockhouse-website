@@ -127,7 +127,7 @@
       "officialUnit": "BYT.3",
       "sitePlan": "",
       "totalArea": "161.5 m²",
-      "pdf": "assets/floorplans/pdf/townhouse-03-plan.pdf",
+      "pdf": "assets/floorplans/pdf/townhouse-03-plan.pdf?v=full-gardens-20261030",
       "status": "available",
       "building": "SO1",
       "nvArea": "118.5 m²",
@@ -187,7 +187,8 @@
       "source": "Prohlášení vlastníka",
       "video": "assets/videos/rock-house-tour-from-41s.mp4",
       "id": "03",
-      "planPreview": "assets/floorplans/presentation/townhouse-03-plan.jpg"
+      "planPreview": "assets/floorplans/presentation/townhouse-03-plan.jpg?v=full-gardens-20261030",
+      "planDisplay": "full"
     },
     {
       "unit": "Townhouse 04",
@@ -296,7 +297,7 @@
       "officialUnit": "BYT.6",
       "sitePlan": "",
       "totalArea": "134.2 m²",
-      "pdf": "assets/floorplans/pdf/townhouse-06-plan.pdf",
+      "pdf": "assets/floorplans/pdf/townhouse-06-plan.pdf?v=full-gardens-20261030",
       "status": "available",
       "building": "SO2",
       "nvArea": "84.9 m²",
@@ -326,7 +327,8 @@
       "source": "Prohlášení vlastníka",
       "video": "assets/videos/rock-house-tour-from-41s.mp4",
       "id": "06",
-      "planPreview": "assets/floorplans/presentation/townhouse-06-plan.jpg"
+      "planPreview": "assets/floorplans/presentation/townhouse-06-plan.jpg?v=full-gardens-20261030",
+      "planDisplay": "full"
     }
   ]
 }
