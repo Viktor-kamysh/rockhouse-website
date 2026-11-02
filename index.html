@@ -4144,7 +4144,7 @@
                 return `
                     <article class="residence-card${unit.planDisplay === 'full' ? ' residence-card--full-plan' : ''}">
                         <button class="residence-card__media" data-action="plan" data-residence="${unit.id}" aria-label="${t('btn_view_plan')} ${unit.residence}">
-                            <img src="${getPlanImage(unit)}" alt="${unit.residence} verified floor plan">
+                            <img src="${getPlanImage(unit)}" alt="${unit.residence} - ${t('btn_view_plan')}" loading="lazy" decoding="async" width="2048" height="2048">
                         </button>
                         <div class="residence-card__body">
                             <div class="residence-card__topline">
